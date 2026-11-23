@@ -16,7 +16,6 @@ Tout le texte est dans des fichiers simples, aucun code à toucher :
 | Contact, n° d'éthique, menu, mode brouillon | `src/data/site.json` |
 | Vidéo de présentation | champ `video` dans `src/content/pages/pourquoi.md` |
 
-**Formulaire de contact** (page Contact) : 3 champs, sans serveur. À l'envoi, le programme d'e-mail du visiteur s'ouvre avec le message prêt à partir, vers l'adresse de `site.json`. Rien n'est stocké sur le site.
 
 - **Ajouter une page** : créer `src/content/pages/ma-page.md` (même en-tête que les autres) → elle est publiée sur `/ma-page/`. L'ajouter au menu dans `site.json` si besoin.
 - **Vidéo** : mettre l'identifiant YouTube (`youtube: "dQw4w9WgXcQ"`, la partie après `v=`), de préférence en vidéo « non répertoriée ». Elle ne se charge qu'au clic, via youtube-nocookie. Un fichier local dans `public/videos/` marche aussi (`src: /videos/irm.mp4`), mais 25 Mo maximum par fichier sur Cloudflare.

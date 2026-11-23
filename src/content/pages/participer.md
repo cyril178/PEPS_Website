@@ -29,7 +29,7 @@ Vous **gardez votre suivi médical** et votre traitement.
 
 1. **Entretien** (environ 3 h) sur votre quotidien.
 2. **IRM** (environ 2 h) : des jeux et tâches simples, avec des gains possibles.
-3. **8 semaines** : une séance de groupe PEPS par semaine, ou votre suivi habituel. Le groupe est tiré au sort.
+3. **8 semaines** : une séance de groupe [PEPS](/programme/) par semaine, ou votre suivi habituel. Le groupe est tiré au sort.
 4. **Entretien et IRM**, une deuxième fois.
 
 ## C'est où ?

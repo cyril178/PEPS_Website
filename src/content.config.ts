@@ -20,6 +20,8 @@ const pages = defineCollection({
         caption: z.string(),
       })
       .optional(),
+    // Illustration affichée en haut de page
+    image: z.object({ src: z.string(), alt: z.string(), width: z.number(), height: z.number() }).optional(),
     // Frise « votre parcours » (page d'accueil)
     journey: z.array(z.object({ title: z.string(), text: z.string() })).optional(),
     // Bouton d'appel à l'action en bas de page
