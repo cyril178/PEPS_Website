@@ -9,14 +9,21 @@ image:
   height: 169
 facts:
   - label: Format
+    icon: group
     value: Petit groupe de 3 à 5 personnes
   - label: Rythme
+    icon: calendar
     value: 8 séances d'une heure, une par semaine
   - label: Animation
+    icon: user
     value: Psychologue formé·e au programme
   - label: Lieu
+    icon: pin
     value: Centre ambulatoire des HUG (CAPPI), Genève
 ---
+
+import Cards from '../../components/Cards.astro';
+
 
 ## À quoi sert PEPS ?
 
@@ -30,11 +37,13 @@ PEPS **s'ajoute** à votre traitement et à votre suivi habituels. Il ne les rem
 
 Chaque séance travaille une compétence, avec des exemples de la vie de tous les jours.
 
-- **Remarquer et savourer.** Prendre le temps de sentir un moment agréable pendant qu'il se passe : un café, une musique, une promenade.
-- **Exprimer ses émotions.** Mettre des mots sur ce que l'on ressent, et le montrer aussi par le visage et le corps.
-- **Faire durer les bons moments.** Les partager avec quelqu'un, s'en souvenir, au lieu de les laisser passer.
-- **Anticiper.** Penser à l'avance à un moment agréable, pour avoir envie de le vivre et passer à l'action.
-- **Répondre aux pensées qui freinent.** Repérer les pensées comme « ça ne sert à rien » ou « je n'y arriverai pas », et y répondre autrement.
+<Cards cols={5} items={[
+  { icon: "sun", title: "Remarquer et savourer", text: "Prendre le temps de sentir un moment agréable pendant qu'il se passe : un café, une musique, une promenade." },
+  { icon: "chat", title: "Exprimer ses émotions", text: "Mettre des mots sur ce que l'on ressent, et le montrer aussi par le visage et le corps." },
+  { icon: "group", title: "Faire durer les bons moments", text: "Les partager avec quelqu'un, s'en souvenir, au lieu de les laisser passer." },
+  { icon: "calendar", title: "Anticiper", text: "Penser à l'avance à un moment agréable, pour avoir envie de le vivre et passer à l'action." },
+  { icon: "shield", title: "Répondre aux pensées qui freinent", text: "Repérer les pensées comme « ça ne sert à rien » ou « je n'y arriverai pas », et y répondre autrement." },
+]} />
 
 ## Comment se passe une séance ?
 
@@ -55,4 +64,4 @@ Vous parlez quand vous le souhaitez. Personne n'est obligé de tout partager.
 
 Une première étude en Suisse romande a montré que PEPS pouvait **diminuer le manque de plaisir**. Avec cette nouvelle étude, nous voulons confirmer ces résultats et comprendre **comment** PEPS agit dans le cerveau. Pour en savoir plus : [Pourquoi cette étude ?](/pourquoi/)
 
-Dans l'étude, un tirage au sort décide si vous suivez PEPS ou votre suivi habituel (voir [Participer](/participer/)).
+Dans l'étude, un tirage au sort décide si vous suivez PEPS ou votre suivi habituel (voir [Déroulement de l'étude](/participer/)).

@@ -4,14 +4,21 @@ description: Qui participe, ce qui se passe à chaque étape, quand et où.
 eyebrow: Pour les personnes concernées par la schizophrénie
 facts:
   - label: Durée
+    icon: calendar
     value: Environ 4 mois
   - label: Rendez-vous
+    icon: clock
     value: 2 × (entretien 3 h + IRM 2 h), et 8 semaines de thérapie PEPS
   - label: Horaires
+    icon: sun
     value: Flexibles, adaptés à votre suivi
   - label: Indemnisation
-    value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
+    icon: coin
+    value: "Environ 200 CHF pour les entretiens et les IRM (20 CHF/heure + gains aux jeux)"
 ---
+
+import StudyFlow from '../../components/StudyFlow.astro';
+
 
 ## Qui participe ?
 
@@ -26,10 +33,13 @@ Les participant·es **gardent leur suivi médical** et leur traitement.
 
 ## Les étapes
 
-1. **Entretien** (environ 3 h) sur votre quotidien.
-2. **IRM** (environ 2 h) : des jeux et tâches simples, avec des gains possibles.
-3. **8 semaines** : une séance de groupe [PEPS](/programme/) par semaine, ou votre suivi habituel. Le groupe est tiré au sort.
-4. **Entretien et IRM**, une deuxième fois.
+<StudyFlow variant="patients" />
+
+## Pendant les visites
+
+- L'**entretien** porte sur le quotidien, l'humeur et la motivation.
+- Pendant l'**IRM**, on fait des jeux et tâches simples, avec des gains possibles.
+- Le **tirage au sort** est fait par un ordinateur : c'est la seule façon de savoir si PEPS fait vraiment une différence.
 
 ## C'est où ?
 

@@ -4,14 +4,21 @@ description: "Le groupe de comparaison de l'étude : un entretien et une IRM, de
 eyebrow: Groupe de comparaison
 facts:
   - label: Rendez-vous
+    icon: calendar
     value: 2 visites, à 8 semaines d'intervalle
   - label: Chaque visite
+    icon: clock
     value: Entretien (environ 3 h) + IRM (environ 2 h)
   - label: Horaires
+    icon: sun
     value: Flexibles, entretien et IRM possibles le même jour
   - label: Indemnisation
-    value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
+    icon: coin
+    value: "Environ 200 CHF pour les entretiens et les IRM (20 CHF/heure + gains aux jeux)"
 ---
+
+import StudyFlow from '../../components/StudyFlow.astro';
+
 
 Cette étude veut mieux comprendre la motivation, dans le comportement et dans le cerveau. Pour cela, nous avons besoin de **comparer** avec des personnes en bonne santé. Vous ne suivez pas de thérapie.
 
@@ -24,6 +31,10 @@ Des hommes et des femmes :
 - qui peuvent passer une **IRM** (voir [L'IRM](/irm/)).
 
 ## Les étapes
+
+<StudyFlow variant="controles" />
+
+## Pendant les visites
 
 - Un **entretien** sur votre quotidien.
 - Des **exercices et tâches simples**.

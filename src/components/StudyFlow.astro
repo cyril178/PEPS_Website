@@ -1,0 +1,191 @@
+---
+// Schéma du déroulement de l'étude.
+// variant="patients" : début → tirage au sort → 2 groupes pendant 8 semaines → fin
+// variant="controles" : début → 8 semaines sans intervention → fin
+import Icon from './Icon.astro';
+interface Props { variant?: 'patients' | 'controles' }
+const { variant = 'patients' } = Astro.props;
+const patients = variant === 'patients';
+const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
+---
+<figure class={`flow full reveal ${patients ? 'is-patients' : 'is-controles'}`} aria-label="Schéma du déroulement de l'étude">
+  <ol class="ruler" aria-hidden="true">
+    <li>Début</li>
+    <li>8 semaines</li>
+    <li>Fin</li>
+  </ol>
+
+  <div class="track">
+    <!-- 1. Début -->
+    <div class="col start">
+      {patients && (
+        <div class="step">
+          <span class="ico"><Icon name="phone" /></span>
+          <div><strong>Premier contact</strong><span>Présentation de l'étude</span></div>
+        </div>
+      )}
+      <div class="step">
+        <span class="ico"><Icon name="chat" /></span>
+        <div><strong>Entretien</strong><span><Icon name="clock" size={14} /> environ 3 h</span></div>
+      </div>
+      <div class="step">
+        <span class="ico"><Icon name="scan" /></span>
+        <div><strong>IRM</strong><span><Icon name="clock" size={14} /> environ 2 h</span></div>
+      </div>
+    </div>
+
+    {patients ? (
+      <>
+        <!-- 2. Tirage au sort + embranchement -->
+        <div class="col fork">
+          <div class="dice" title="Tirage au sort">
+            <Icon name="dice" size={28} />
+            <span>Tirage au sort</span>
+          </div>
+          <svg class="branch" viewBox="0 0 60 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 50 C 30 50, 30 25, 60 25" />
+            <path d="M0 50 C 30 50, 30 75, 60 75" />
+          </svg>
+        </div>
+
+        <!-- 3. Les deux groupes -->
+        <div class="col lanes">
+          <div class="lane peps">
+            <div class="lane-head"><Icon name="group" size={20} /><strong>Groupe PEPS</strong></div>
+            <ol class="sessions" aria-label="8 séances de groupe">
+              {sessions.map((n) => <li style={`--i:${n}`}><span>{n}</span></li>)}
+            </ol>
+            <p>8 séances de groupe d'1 h, une par semaine, en plus du suivi habituel</p>
+          </div>
+          <div class="lane tau">
+            <div class="lane-head"><Icon name="home" size={20} /><strong>Suivi habituel</strong></div>
+            <div class="bar"><span></span></div>
+            <p>Les soins continuent comme d'habitude</p>
+          </div>
+        </div>
+
+        <div class="col merge" aria-hidden="true">
+          <svg class="branch" viewBox="0 0 60 100" preserveAspectRatio="none">
+            <path d="M0 25 C 30 25, 30 50, 60 50" />
+            <path d="M0 75 C 30 75, 30 50, 60 50" />
+          </svg>
+        </div>
+      </>
+    ) : (
+      <div class="col lanes single">
+        <div class="lane tau">
+          <div class="lane-head"><Icon name="calendar" size={20} /><strong>8 semaines</strong></div>
+          <div class="bar"><span></span></div>
+          <p>Pas d'intervention : la vie continue normalement</p>
+        </div>
+      </div>
+    )}
+
+    <!-- 4. Fin -->
+    <div class="col end">
+      <div class="step final">
+        <span class="ico"><Icon name="flag" /></span>
+        <div><strong>Entretien + IRM</strong><span>Les mêmes mesures qu'au début, pour voir ce qui a changé</span></div>
+      </div>
+    </div>
+  </div>
+</figure>
+
+<style>
+  .flow {
+    margin: 1.5rem 0 2.5rem; padding: clamp(1.25rem, 3vw, 2rem);
+    background: var(--paper); border: 1px solid var(--line); border-radius: calc(var(--radius) * 2);
+    box-shadow: 0 1px 2px rgb(28 61 69 / 0.04), 0 12px 32px -12px rgb(28 61 69 / 0.12);
+  }
+
+  /* Règle du temps */
+  .ruler {
+    list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid;
+    grid-template-columns: var(--cols);
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .ruler li { padding-bottom: 0.5rem; border-bottom: 2px solid var(--line); }
+  .ruler li:nth-child(2) { color: var(--teal); border-color: var(--teal); }
+  .is-patients { --cols: minmax(0, 1fr) 6.5rem minmax(0, 1.7fr) 2.5rem minmax(0, 1fr); }
+  .is-controles { --cols: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 1fr); }
+  .is-patients .ruler li:nth-child(2) { grid-column: span 3; }
+
+  .track { display: grid; align-items: stretch; gap: 0; }
+  .track { grid-template-columns: var(--cols); }
+  .is-controles .track, .is-controles .ruler { column-gap: 1rem; }
+  .col { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; }
+
+  .step {
+    display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.8rem 0.9rem;
+    background: var(--surface); border-radius: var(--radius);
+  }
+  .step strong { display: block; color: var(--teal-deep); line-height: 1.25; }
+  .step span { font-size: 0.88rem; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 0.3rem; line-height: 1.35; }
+  .ico {
+    flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+    background: var(--paper); color: var(--teal); box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .final { background: var(--teal); }
+  .final strong { color: #fff; }
+  .final span { color: rgb(255 255 255 / 0.85); }
+  .final .ico { background: rgb(255 255 255 / 0.14); color: #fff; box-shadow: none; }
+
+  /* Tirage au sort */
+  .fork { position: relative; flex-direction: row; align-items: center; justify-content: flex-start; gap: 0; padding-left: 0.5rem; }
+  .dice {
+    position: relative; z-index: 1; flex: none; display: grid; justify-items: center; gap: 0.2rem;
+    width: 4.2rem; padding: 0.6rem 0.25rem; text-align: center;
+    border-radius: var(--radius); background: var(--teal-deep); color: #fff;
+    font-size: 0.72rem; font-weight: 700; line-height: 1.15;
+  }
+  .branch { flex: 1; min-width: 1rem; height: 100%; min-height: 12rem; overflow: visible; }
+  .branch path { fill: none; stroke: var(--teal); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 4 5; }
+  .merge { padding: 0; }
+  .merge .branch { width: 100%; }
+
+  /* Les deux groupes */
+  .lanes { gap: 0.9rem; }
+  .lane { padding: 0.9rem 1rem 1rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--paper); }
+  .lane-head { display: flex; align-items: center; gap: 0.45rem; color: var(--teal); }
+  .lane-head strong { color: var(--teal-deep); }
+  .lane p { margin: 0.55rem 0 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.4; }
+  .lane.peps { border-color: var(--teal); background: linear-gradient(180deg, var(--sun-soft), var(--paper)); }
+
+  .sessions { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.35rem; }
+  .sessions li { aspect-ratio: 1; max-width: 2.4rem; display: grid; place-items: center; border-radius: 50%; background: var(--teal); color: #fff; font-size: 0.78rem; font-weight: 700; }
+  .bar { margin-top: 0.75rem; height: 0.55rem; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+  .bar span { display: block; height: 100%; width: 100%; border-radius: inherit; background: repeating-linear-gradient(90deg, var(--ink-soft) 0 6px, transparent 6px 12px); opacity: 0.35; }
+
+  /* Animation à l'apparition (seulement si JS actif et mouvement autorisé) */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .flow .sessions li { transition: transform 0.45s cubic-bezier(.2,.8,.3,1.3), opacity 0.3s; transition-delay: calc(var(--i) * 90ms + 300ms); }
+    :global(.js) .flow:not(.in) .sessions li { transform: scale(0.3); opacity: 0; }
+    :global(.js) .flow .branch path { stroke-dashoffset: 0; animation: none; }
+    :global(.js) .flow.in .branch path { animation: march 1.6s linear infinite; }
+    :global(.js) .flow .bar span { transform-origin: left; transition: transform 1.1s ease 0.4s; }
+    :global(.js) .flow:not(.in) .bar span { transform: scaleX(0); }
+    @keyframes march { to { stroke-dashoffset: -18; } }
+  }
+
+  /* Mobile : tout s'empile verticalement */
+  @media (max-width: 860px) {
+    .ruler { display: none; }
+    .is-patients .track, .is-controles .track { grid-template-columns: 1fr; gap: 0; }
+    .col { position: relative; padding: 0 0 1.6rem; }
+    .col:not(:last-child)::after {
+      content: ''; position: absolute; left: 50%; bottom: 0.35rem; height: 1rem; width: 2px; background: var(--teal); opacity: 0.5;
+    }
+    .merge { display: none; }
+    .fork { justify-content: center; }
+    .fork .branch { display: none; }
+    .dice { margin: 0; width: auto; grid-auto-flow: column; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; font-size: 0.85rem; }
+    .dice br { display: none; }
+    .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .lanes.single { grid-template-columns: 1fr; }
+    .sessions { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 420px) {
+    .lanes { grid-template-columns: 1fr; }
+    .sessions { grid-template-columns: repeat(8, 1fr); }
+  }
+</style>
