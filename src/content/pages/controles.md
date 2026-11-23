@@ -1,39 +1,37 @@
 ---
-title: Devenir participant·e contrôle
-description: L'étude PEPS cherche des volontaires sans trouble psychiatrique pour une séance d'IRM et quelques questionnaires.
-eyebrow: Pour les volontaires sans trouble psychiatrique
+title: Volontaires en bonne santé
+description: "Étude rémunérée sur la motivation : un entretien et une IRM, deux fois, à 8 semaines d'intervalle."
+eyebrow: Participant·es en bonne santé recherché·es
 facts:
-  - label: Visites
-    value: "[À COMPLÉTER : nombre] visite(s)"
-  - label: Durée
-    value: "Environ [À COMPLÉTER : durée] heures au total"
-  - label: Dédommagement
-    value: "[À COMPLÉTER : montant]"
-  - label: Où
-    value: Campus Biotech, Genève
+  - label: Rendez-vous
+    value: 2 visites, à 8 semaines d'intervalle
+  - label: Chaque visite
+    value: Entretien (environ 3 h) + IRM (environ 2 h)
+  - label: Horaires
+    value: Flexibles, entretien et IRM possibles le même jour
+  - label: Indemnisation
+    value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
 cta:
   label: Je souhaite participer
   href: /contact/
 ---
 
-## Pourquoi avons-nous besoin de vous ?
+Cette étude veut mieux comprendre la motivation, dans le comportement et dans le cerveau. Pour cela, nous avons besoin de **comparer** avec des personnes en bonne santé. Vous ne suivez pas de thérapie.
 
-Pour comprendre ce qui se passe dans le cerveau des personnes qui vivent avec une schizophrénie, il faut pouvoir **comparer** avec des personnes qui n'ont pas de trouble psychiatrique.
+## Vous pouvez participer si…
 
-Les participant·es contrôles **ne suivent pas le programme PEPS**. Vous faites les mêmes mesures que les autres participant·es, une seule fois.
+- vous êtes un homme ou une femme de **18 à 60 ans** ;
+- vous n'avez **pas de trouble psychique** ;
+- vous pouvez passer une **IRM** (voir [L'IRM](/irm/)).
 
-## Comment ça se passe ?
+## Ce que vous ferez
 
-1. **Premier contact.** Un court échange par téléphone ou par e-mail pour vérifier que l'étude vous convient.
-2. **Information et consentement.** Nous vous expliquons l'étude. Vous signez le consentement seulement si vous le souhaitez.
-3. **Questionnaires et entretien.** Sur votre humeur, votre motivation et votre quotidien.
-4. **Séance d'IRM.** Environ [À COMPLÉTER : durée] minutes dans l'appareil. Vous faites de petits jeux sur ordinateur (par exemple gagner des points), vous regardez un court film d'animation, et vous restez simplement au repos.
+- Un **entretien** sur votre quotidien.
+- Des **exercices et tâches simples**.
+- Des tâches dans l'**IRM**, avec des gains possibles.
 
-## Qui peut participer ?
+## C'est où ?
 
-- Vous avez entre [À COMPLÉTER : âge minimum] et [À COMPLÉTER : âge maximum] ans.
-- Vous n'avez pas de trouble psychiatrique ou neurologique connu.
-- Vous ne prenez pas de médicament psychiatrique.
-- Vous pouvez passer une IRM (voir la page [L'IRM](/irm/)).
+**Campus Biotech**, Chemin des Mines 9, 1202 Genève — bus 1, 11 ou 25, arrêt **Jardin Botanique**. Détails sur la page [Contact](/contact/#acces).
 
-Nous cherchons des personnes de différents âges et profils, pour que les deux groupes se ressemblent.
+Participation volontaire · données anonymisées · étude approuvée par la CCER (2024-01743).

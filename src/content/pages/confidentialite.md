@@ -11,7 +11,6 @@ L'étude respecte la **loi fédérale relative à la recherche sur l'être humai
 - Vos données sont **codées** : votre nom est remplacé par un numéro.
 - Seule l'équipe de l'étude a accès à la liste qui relie le code à votre nom.
 - Les résultats sont publiés **sans qu'on puisse vous reconnaître**.
-- [À COMPLÉTER : durée de conservation et lieu de stockage des données, selon le protocole].
 
 ## Sur ce site
 
@@ -19,5 +18,3 @@ L'étude respecte la **loi fédérale relative à la recherche sur l'être humai
 - Les polices de caractères sont hébergées sur le site lui-même.
 - La vidéo est chargée depuis YouTube (mode « sans cookies ») **seulement si vous cliquez dessus**.
 - Si vous nous écrivez, votre message est utilisé uniquement pour vous répondre.
-
-Responsable : [À COMPLÉTER : nom et adresse du responsable du traitement].

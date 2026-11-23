@@ -4,6 +4,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "peps-website",
   "compatibility_date": "2026-11-01",
+  // URL publique *.workers.dev + URL d'aperçu pour chaque branche
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"

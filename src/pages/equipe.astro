@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const team = await getCollection('team');
+---
+<Base title="L'équipe" description="Les personnes derrière l'étude PEPS, et pourquoi elles s'y engagent.">
+  <PageHeader eyebrow="Qui sommes-nous ?" title="L'équipe" lead="Les personnes qui vous accueillent, vous écoutent et mènent cette recherche." />
+  <div class="wrap">
+    <ul class="team">
+      {team.map((m) => (
+        <li>
+          <h2>{m.data.name}</h2>
+          <p class="role">{m.data.role}</p>
+          {m.data.bio && <p>{m.data.bio}</p>}
+          {m.data.motivation && <blockquote><p>{m.data.motivation}</p></blockquote>}
+        </li>
+      ))}
+    </ul>
+    <aside class="cta">
+      <p>Vous aimeriez nous parler ? Un premier échange ne vous engage à rien.</p>
+      <a class="button" href="/contact/">Nous contacter</a>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .team { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+  .team li { background: var(--surface); border-radius: calc(var(--radius) + 4px); padding: 1.5rem 1.5rem 1.25rem; }
+  h2 { margin: 0; font-size: 1.5rem; }
+  .role { margin: 0.25rem 0 1rem; font-weight: 700; color: var(--teal); font-size: 0.98rem; }
+  blockquote { margin: 1rem 0 0; padding: 0.9rem 1.1rem; background: var(--paper); border-left: 4px solid var(--sun); border-radius: 0 10px 10px 0; font-style: italic; }
+  blockquote p { margin: 0; }
+  .cta {
+    margin-top: 3.5rem; max-width: var(--measure); padding: 1.75rem; border-radius: var(--radius);
+    background: var(--sun-soft); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .cta p { margin: 0; flex: 1 1 280px; font-weight: 700; color: var(--teal-deep); }
+</style>

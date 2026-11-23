@@ -20,6 +20,8 @@ const pages = defineCollection({
         caption: z.string(),
       })
       .optional(),
+    // Frise « votre parcours » (page d'accueil)
+    journey: z.array(z.object({ title: z.string(), text: z.string() })).optional(),
     // Bouton d'appel à l'action en bas de page
     cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }),
@@ -41,6 +43,8 @@ const team = defineCollection({
   schema: z.object({
     name: z.string(),
     role: z.string(),
+    bio: z.string().optional(),
+    motivation: z.string().optional(),
   }),
 });
 

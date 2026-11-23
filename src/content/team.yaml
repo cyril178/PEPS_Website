@@ -1,9 +1,10 @@
-- id: kaiser
-  name: Prof. Stefan Kaiser
-  role: Investigateur principal — Département de psychiatrie, UNIGE
 - id: petignat
   name: Cyril Petignat
-  role: Psychologue, doctorant — coordination de l'étude
+  role: Psychologue et neuroscientifique, doctorant — coordinateur de l'étude
+  bio: "Cyril Petignat prépare un doctorat au Département de psychiatrie de l'Université de Genève, au Campus Biotech. Sa recherche étudie comment PEPS, un programme de groupe qui entraîne à savourer les moments positifs, change l'activité du cerveau liée à la motivation et au plaisir chez les personnes vivant avec une schizophrénie."
 - id: goldstein
   name: Rachel Goldstein
-  role: "[À COMPLÉTER : rôle]"
+  role: Coordinatrice de l'étude
+- id: kaiser
+  name: Prof. Stefan Kaiser
+  role: Investigateur principal — Service de psychiatrie adulte, HUG et UNIGE
