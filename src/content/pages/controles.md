@@ -1,7 +1,7 @@
 ---
-title: Volontaires en bonne santé
-description: "Étude rémunérée sur la motivation : un entretien et une IRM, deux fois, à 8 semaines d'intervalle."
-eyebrow: Participant·es en bonne santé recherché·es
+title: Participant·es en bonne santé
+description: "Le groupe de comparaison de l'étude : un entretien et une IRM, deux fois, à 8 semaines d'intervalle."
+eyebrow: Groupe de comparaison
 facts:
   - label: Rendez-vous
     value: 2 visites, à 8 semaines d'intervalle
@@ -11,20 +11,19 @@ facts:
     value: Flexibles, entretien et IRM possibles le même jour
   - label: Indemnisation
     value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
-cta:
-  label: Je souhaite participer
-  href: /contact/
 ---
 
 Cette étude veut mieux comprendre la motivation, dans le comportement et dans le cerveau. Pour cela, nous avons besoin de **comparer** avec des personnes en bonne santé. Vous ne suivez pas de thérapie.
 
-## Vous pouvez participer si…
+## Qui participe ?
 
-- vous êtes un homme ou une femme de **18 à 60 ans** ;
-- vous n'avez **pas de trouble psychique** ;
-- vous pouvez passer une **IRM** (voir [L'IRM](/irm/)).
+Des hommes et des femmes :
 
-## Ce que vous ferez
+- de **18 à 60 ans** ;
+- **sans trouble psychique** ;
+- qui peuvent passer une **IRM** (voir [L'IRM](/irm/)).
+
+## Les étapes
 
 - Un **entretien** sur votre quotidien.
 - Des **exercices et tâches simples**.

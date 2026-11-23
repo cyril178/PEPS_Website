@@ -1,6 +1,6 @@
 ---
 title: Étude PEPS Genève
-description: "Vous vivez avec une schizophrénie et vous manquez souvent d'envie ou de plaisir ? L'étude PEPS propose un programme de groupe pour retrouver de la motivation. Étude rémunérée."
+description: "L'étude PEPS évalue un programme de groupe qui aide les personnes vivant avec une schizophrénie à retrouver du plaisir et de la motivation. Vous trouverez ici les informations sur le programme, le déroulement et l'IRM."
 eyebrow: Étude de recherche — Université de Genève et HUG
 facts:
   - label: Pour qui
@@ -13,7 +13,7 @@ facts:
     value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
 journey:
   - title: Premier appel
-    text: Un court échange, sans engagement.
+    text: Un échange avec l'équipe pour présenter l'étude.
   - title: Entretien + IRM
     text: Environ 3 h d'entretien et 2 h d'IRM, avec de petits jeux.
   - title: 8 semaines PEPS

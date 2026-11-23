@@ -17,8 +17,8 @@ const { Content } = await render(page);
         <h1>{site.tagline}</h1>
         <p class="lead">{page.data.description}</p>
         <div class="actions">
-          <a class="button" href="/participer/">Comment participer ?</a>
-          <a class="button ghost" href="/contact/">Nous contacter</a>
+          <a class="button" href="/programme/">Le programme PEPS</a>
+          <a class="button ghost" href="/participer/">Déroulement de l'étude</a>
         </div>
       </div>
       <figure class="hero-art">
@@ -38,17 +38,16 @@ const { Content } = await render(page);
 
   {page.data.journey && (
     <section class="wrap journey-block" aria-labelledby="parcours">
-      <h2 id="parcours">Votre parcours, étape par étape</h2>
+      <h2 id="parcours">Le déroulement, étape par étape</h2>
       <Journey steps={page.data.journey} />
-      <p class="journey-cta"><a class="button" href="/participer/">Comment participer ?</a></p>
     </section>
   )}
 
   <section class="wrap paths" aria-label="Autres participant·es">
     <a class="path alt" href="/controles/">
-      <span class="tag">Vous êtes en bonne santé ?</span>
-      <strong>Participer comme volontaire</strong>
-      <span>Un entretien et une IRM, deux fois. Étude rémunérée (environ 200 CHF).</span>
+      <span class="tag">Participant·es en bonne santé</span>
+      <strong>Informations pour les volontaires</strong>
+      <span>Ce que fait le groupe de comparaison : un entretien et une IRM, deux fois.</span>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
   </section>
@@ -75,7 +74,6 @@ const { Content } = await render(page);
 
   .paths { display: grid; margin-top: 4rem; max-width: 640px; }
   .journey-block h2 { margin-top: 3.5rem; }
-  .journey-cta { margin-top: 2rem; }
   .path {
     position: relative; display: flex; flex-direction: column; gap: 0.5rem;
     padding: 1.75rem 1.75rem 2.25rem; border-radius: calc(var(--radius) + 4px);

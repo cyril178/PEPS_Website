@@ -5,9 +5,6 @@ eyebrow: Le programme et la recherche
 video:
   youtube: "uUvHTG2cIP8"
   caption: "L'étude PEPS expliquée en vidéo, avec un patient partenaire."
-cta:
-  label: Je souhaite en parler
-  href: /contact/
 ---
 
 ## Le problème : l'envie qui s'éteint

@@ -20,7 +20,7 @@
     "phone": "022 379 09 58"
   },
   "nav": [
-    { "label": "Participer", "href": "/participer/" },
+    { "label": "L'étude", "href": "/participer/" },
     { "label": "Le programme", "href": "/programme/" },
     { "label": "Pourquoi cette étude ?", "href": "/pourquoi/" },
     { "label": "Questions", "href": "/faq/" },

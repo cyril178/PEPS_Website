@@ -16,9 +16,6 @@ facts:
     value: Psychologue formé·e au programme
   - label: Lieu
     value: Centre ambulatoire des HUG (CAPPI), Genève
-cta:
-  label: Je souhaite en parler
-  href: /contact/
 ---
 
 ## À quoi sert PEPS ?

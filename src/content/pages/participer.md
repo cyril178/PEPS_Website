@@ -1,6 +1,6 @@
 ---
-title: Participer à l'étude
-description: Qui peut participer, ce que vous ferez, quand et où.
+title: Déroulement de l'étude
+description: Qui participe, ce qui se passe à chaque étape, quand et où.
 eyebrow: Pour les personnes concernées par la schizophrénie
 facts:
   - label: Durée
@@ -11,21 +11,20 @@ facts:
     value: Flexibles, adaptés à votre suivi
   - label: Indemnisation
     value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
-cta:
-  label: Je suis intéressé·e
-  href: /contact/
 ---
 
-## Vous pouvez participer si…
+## Qui participe ?
 
-- vous avez entre **18 et 60 ans** ;
-- vous vivez avec une **schizophrénie** ou un trouble psychotique ;
-- vous ressentez des **difficultés de motivation ou de plaisir** ;
-- votre situation est **stable** en ce moment.
+L'étude concerne des adultes :
 
-Vous **gardez votre suivi médical** et votre traitement.
+- de **18 à 60 ans** ;
+- vivant avec une **schizophrénie** ou un trouble psychotique ;
+- qui ressentent des **difficultés de motivation ou de plaisir** ;
+- dont la situation est **stable**.
 
-## Ce que vous ferez
+Les participant·es **gardent leur suivi médical** et leur traitement.
+
+## Les étapes
 
 1. **Entretien** (environ 3 h) sur votre quotidien.
 2. **IRM** (environ 2 h) : des jeux et tâches simples, avec des gains possibles.

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
-const { title, description, eyebrow, facts, video, cta, image } = page.data;
+const { title, description, eyebrow, facts, video, image } = page.data;
 ---
 <Base title={title} description={description}>
   <PageHeader eyebrow={eyebrow} title={title} lead={description} />
@@ -25,12 +25,6 @@ const { title, description, eyebrow, facts, video, cta, image } = page.data;
     <article class="prose">
       <Content />
     </article>
-    {cta && (
-      <aside class="cta">
-        <p>Une question, ou envie de participer ? Un premier échange ne vous engage à rien.</p>
-        <a class="button" href={cta.href}>{cta.label}</a>
-      </aside>
-    )}
   </div>
 </Base>
 
@@ -38,9 +32,4 @@ const { title, description, eyebrow, facts, video, cta, image } = page.data;
   .facts-block { margin-bottom: 2.5rem; }
   .illustration { display: block; width: 100%; max-width: 420px; height: auto; border-radius: var(--radius); margin-bottom: 2rem; }
   .video-block { max-width: 860px; }
-  .cta {
-    margin-top: 3.5rem; max-width: var(--measure); padding: 1.75rem; border-radius: var(--radius);
-    background: var(--sun-soft); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
-  }
-  .cta p { margin: 0; flex: 1 1 280px; font-weight: 700; color: var(--teal-deep); }
 </style>
