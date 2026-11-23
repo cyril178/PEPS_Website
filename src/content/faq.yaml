@@ -1,0 +1,45 @@
+# Questions fréquentes. audience : tous | patients | controles
+- id: obligation
+  question: Est-ce que je dois participer si mon médecin m'en parle ?
+  answer: Non. La participation est toujours volontaire. Vous pouvez refuser, ou arrêter à tout moment, sans donner de raison. Cela ne change rien à vos soins.
+  audience: patients
+
+- id: traitement
+  question: Est-ce que je dois changer mon traitement ?
+  answer: Non. Vous continuez votre traitement et votre suivi habituels. Nous vous demandons seulement de nous signaler les changements pendant l'étude.
+  audience: patients
+
+- id: groupe
+  question: Je n'aime pas trop parler en groupe. Est-ce un problème ?
+  answer: Ce n'est pas un problème. Les groupes sont petits et bienveillants. Vous parlez quand vous le souhaitez, personne n'est obligé de tout partager.
+  audience: patients
+
+- id: tirage
+  question: Puis-je choisir mon groupe ?
+  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. [À COMPLÉTER : préciser si le groupe de comparaison pourra suivre PEPS à la fin de l'étude]."
+  audience: patients
+
+- id: irm-danger
+  question: L'IRM est-elle dangereuse ?
+  answer: Non, pour la plupart des personnes. L'IRM n'utilise pas de rayons X. Le seul risque vient du métal dans ou sur le corps, c'est pourquoi nous posons des questions de sécurité avant chaque séance.
+  audience: tous
+
+- id: resultats-irm
+  question: Est-ce que je recevrai les images de mon cerveau ?
+  answer: "[À COMPLÉTER : politique de l'étude sur la communication des images et des découvertes fortuites]."
+  audience: tous
+
+- id: dedommagement
+  question: Suis-je dédommagé·e ?
+  answer: "[À COMPLÉTER : montant, modalités de paiement, remboursement des frais de transport]."
+  audience: tous
+
+- id: controle-qui
+  question: Qui peut être participant·e contrôle ?
+  answer: Des adultes sans trouble psychiatrique ou neurologique connu, qui ne prennent pas de médicament psychiatrique et qui peuvent passer une IRM.
+  audience: controles
+
+- id: donnees
+  question: Que deviennent mes données ?
+  answer: Elles sont codées (votre nom est remplacé par un numéro) et protégées selon la loi suisse. Les résultats sont publiés sans qu'on puisse vous reconnaître.
+  audience: tous

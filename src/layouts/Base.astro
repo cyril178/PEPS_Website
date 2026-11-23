@@ -1,0 +1,122 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+import Sun from '../components/Sun.astro';
+
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+
+const path = Astro.url.pathname;
+const fullTitle = title === site.name ? `${site.name} — ${site.tagline}` : `${title} · ${site.name}`;
+const canonical = new URL(path, Astro.site);
+---
+<!doctype html>
+<html lang="fr-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_CH" />
+    {site.draft && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+
+    {site.draft && (
+      <div class="draft" role="note">
+        <div class="wrap">
+          <strong>Version de travail</strong> — contenu en cours de validation par la commission d'éthique. Merci de ne pas diffuser.
+        </div>
+      </div>
+    )}
+
+    <header class="site-header">
+      <div class="wrap bar">
+        <a class="brand" href="/" aria-label={`${site.name} — accueil`}>
+          <Sun size={38} />
+          <span>PEPS</span>
+        </a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            {site.nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap cols">
+        <div>
+          <p class="foot-brand"><Sun size={28} horizon="#fbf7f0" /> {site.name}</p>
+          <p>{site.institution}</p>
+          <p class="small">{site.ethics}</p>
+        </div>
+        <div>
+          <p class="foot-title">Contact</p>
+          <p class="small">
+            <span>{site.contact.phone}</span><br />
+            <span>{site.contact.email}</span><br />
+            {site.contact.hours}
+          </p>
+        </div>
+        <div>
+          <p class="foot-title">Liens</p>
+          <ul class="small">
+            <li><a href="/contact/">Nous contacter</a></li>
+            <li><a href="/faq/">Questions fréquentes</a></li>
+            <li><a href="/confidentialite/">Protection des données</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .draft { background: #ffe27a; color: #4a3a00; font-size: 0.9rem; padding: 0.5rem 0; }
+
+  .site-header { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 5; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.8rem; flex-wrap: wrap; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none;
+    font-family: var(--font-display); font-weight: 650; font-size: 1.6rem; color: var(--teal-deep); letter-spacing: 0.02em;
+  }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 0.4rem; margin: 0; padding: 0; }
+  nav a {
+    display: block; padding: 0.45rem 0.8rem; border-radius: 999px; text-decoration: none;
+    color: var(--ink); font-weight: 700; font-size: 0.98rem;
+  }
+  nav a:hover { background: var(--surface); color: var(--teal-deep); }
+  nav a[aria-current='page'] { background: var(--teal); color: #fff; }
+
+  @media (max-width: 760px) {
+    .site-header { position: static; }
+    nav { width: 100%; }
+    nav ul { gap: 0.3rem; }
+    nav a { background: var(--surface); font-size: 0.95rem; }
+  }
+
+  .site-footer { margin-top: 6rem; background: var(--teal-deep); color: #e8efee; padding: 3rem 0 3.5rem; }
+  .site-footer :global(a) { color: #fff; }
+  .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+  .foot-brand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 1.3rem; color: #fff; margin-top: 0; }
+  .foot-title { font-weight: 700; color: #fff; margin-top: 0; }
+  .small { font-size: 0.92rem; color: #c9d6d4; }
+  .site-footer ul { list-style: none; padding: 0; margin: 0; }
+  .site-footer li { margin: 0.3rem 0; }
+</style>

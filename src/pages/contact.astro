@@ -1,0 +1,58 @@
+---
+import { getEntry, getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import site from '../data/site.json';
+
+const page = await getEntry('pages', 'contact');
+if (!page) throw new Error('src/content/pages/contact.md manquant');
+const team = await getCollection('team');
+const { Content } = await render(page);
+const c = site.contact;
+const tel = c.phone.replace(/[^\d+]/g, '');
+---
+<Base title={page.data.title} description={page.data.description}>
+  <PageHeader eyebrow={page.data.eyebrow} title={page.data.title} />
+  <div class="wrap grid">
+    <div class="prose"><Content /></div>
+
+    <aside class="card" aria-label="Coordonnées">
+      <p class="who"><strong>{c.name}</strong><br /><span>{c.role}</span></p>
+      <dl>
+        <dt>Téléphone</dt>
+        <dd><a href={`tel:${tel}`}>{c.phone}</a></dd>
+        <dt>E-mail</dt>
+        <dd><a href={`mailto:${c.email}?subject=${encodeURIComponent('Étude PEPS')}`}>{c.email}</a></dd>
+        <dt>Horaires</dt>
+        <dd>{c.hours}</dd>
+        <dt>Adresse</dt>
+        <dd>{c.address}</dd>
+      </dl>
+    </aside>
+  </div>
+
+  <section class="wrap team">
+    <h2>L'équipe</h2>
+    <ul>
+      {team.map((m) => (
+        <li><strong>{m.data.name}</strong><span>{m.data.role}</span></li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--teal); color: #eaf3f2; border-radius: calc(var(--radius) + 4px); padding: 1.75rem; }
+  .card a { color: #fff; font-weight: 700; }
+  .who { margin-top: 0; }
+  .who strong { font-family: var(--font-display); font-size: 1.4rem; font-weight: 560; color: #fff; }
+  .who span { font-size: 0.95rem; color: var(--sun-soft); }
+  dl { margin: 1.25rem 0 0; }
+  dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--sun-soft); margin-top: 1rem; }
+  dd { margin: 0.15rem 0 0; font-size: 1.08rem; }
+  .team ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .team li { background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .team li span { font-size: 0.95rem; color: var(--ink-soft); }
+</style>

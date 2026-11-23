@@ -1,0 +1,30 @@
+---
+interface Props { facts: { label: string; value: string }[]; title?: string }
+const { facts, title = 'En bref' } = Astro.props;
+---
+<section class="facts" aria-label={title}>
+  <dl>
+    {facts.map((f) => (
+      <div>
+        <dt>{f.label}</dt>
+        <dd>{f.value}</dd>
+      </div>
+    ))}
+  </dl>
+</section>
+
+<style>
+  dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    margin: 0;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  dl > div { background: var(--surface); padding: 1.1rem 1.25rem; }
+  dt { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); }
+  dd { margin: 0.25rem 0 0; font-size: 1.05rem; line-height: 1.4; }
+</style>

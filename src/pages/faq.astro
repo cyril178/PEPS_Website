@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import site from '../data/site.json';
+
+const faq = await getCollection('faq');
+
+const groups = [
+  { key: 'tous', title: 'Pour tout le monde' },
+  { key: 'patients', title: 'Programme PEPS' },
+  { key: 'controles', title: 'Participant·es contrôles' },
+].map((g) => ({ ...g, items: faq.filter((f) => f.data.audience === g.key) }))
+ .filter((g) => g.items.length);
+---
+<Base title="Questions fréquentes" description="Les réponses aux questions les plus fréquentes sur l'étude PEPS.">
+  <PageHeader eyebrow="Questions" title="Questions fréquentes" lead="Vous ne trouvez pas votre réponse ? Contactez-nous, nous prenons le temps de répondre." />
+  <div class="wrap">
+    {groups.map((g) => (
+      <section class="group">
+        <h2>{g.title}</h2>
+        {g.items.map((f) => (
+          <details>
+            <summary>{f.data.question}</summary>
+            <p>{f.data.answer}</p>
+          </details>
+        ))}
+      </section>
+    ))}
+    <p class="more"><a class="button" href="/contact/">Poser une question</a></p>
+  </div>
+</Base>
+
+<style>
+  .group { max-width: var(--measure); }
+  .group h2 { margin-top: 2rem; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary {
+    cursor: pointer; list-style: none; padding: 1.1rem 2.5rem 1.1rem 0; position: relative;
+    font-weight: 700; color: var(--teal-deep);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%);
+    font-size: 1.6rem; font-weight: 400; color: var(--sun); transition: transform 0.15s;
+  }
+  details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  details p { margin: 0 0 1.25rem; }
+  .more { margin-top: 3rem; }
+</style>

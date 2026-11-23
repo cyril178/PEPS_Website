@@ -1,0 +1,23 @@
+{
+  "draft": true,
+  "name": "Étude PEPS",
+  "tagline": "Retrouver du plaisir au quotidien",
+  "description": "Informations pour les personnes qui souhaitent participer à l'étude PEPS (Université de Genève, Département de psychiatrie) : déroulement, IRM, questions fréquentes et contact.",
+  "institution": "Université de Genève — Département de psychiatrie",
+  "ethics": "Étude approuvée par la Commission cantonale d'éthique de la recherche (CCER) de Genève — n° [À COMPLÉTER : numéro BASEC]",
+  "contact": {
+    "name": "Cyril Petignat",
+    "role": "Psychologue, doctorant — coordinateur de l'étude",
+    "email": "peps@[À COMPLÉTER : adresse]",
+    "phone": "+41 22 [À COMPLÉTER]",
+    "hours": "Du lundi au vendredi, 9 h – 17 h",
+    "address": "Campus Biotech, Chemin des Mines 9, 1202 Genève"
+  },
+  "nav": [
+    { "label": "L'étude", "href": "/patients/" },
+    { "label": "Participant·e contrôle", "href": "/controles/" },
+    { "label": "L'IRM", "href": "/irm/" },
+    { "label": "Questions", "href": "/faq/" },
+    { "label": "Contact", "href": "/contact/" }
+  ]
+}

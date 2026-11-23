@@ -1,0 +1,92 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Facts from '../components/Facts.astro';
+import Sun from '../components/Sun.astro';
+import site from '../data/site.json';
+
+const page = await getEntry('pages', 'accueil');
+if (!page) throw new Error('src/content/pages/accueil.md manquant');
+const { Content } = await render(page);
+---
+<Base title={page.data.title} description={page.data.description}>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">{page.data.eyebrow}</span>
+        <h1>{site.tagline}</h1>
+        <p class="lead">{page.data.description}</p>
+        <div class="actions">
+          <a class="button" href="/patients/">Découvrir l'étude</a>
+          <a class="button ghost" href="/contact/">Nous contacter</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <Sun size={260} />
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap paths" aria-label="Choisir votre parcours">
+    <a class="path" href="/patients/">
+      <span class="tag">Vous vivez avec une schizophrénie</span>
+      <strong>Participer au programme PEPS</strong>
+      <span>8 séances de groupe, des entretiens et deux IRM. Découvrez comment ça se passe.</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="path alt" href="/controles/">
+      <span class="tag">Vous n'avez pas de trouble psychiatrique</span>
+      <strong>Devenir participant·e contrôle</strong>
+      <span>Une séance d'IRM et quelques questionnaires, pour faire avancer la recherche.</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  {page.data.facts && <div class="wrap facts-block"><Facts facts={page.data.facts} /></div>}
+
+  <section class="wrap body">
+    <div class="prose">
+      <Content />
+      <p><a href="/irm/">Voir comment se passe une séance d'IRM, en vidéo →</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+    background: radial-gradient(90% 120% at 85% 10%, var(--sun-soft) 0%, transparent 60%);
+    overflow: hidden;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: 2rem; }
+  .hero h1 { max-width: 14ch; }
+  .lead { font-size: 1.22em; color: var(--ink-soft); max-width: 46ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .hero-art { display: grid; place-items: center; }
+  .hero-art :global(svg) { width: min(100%, 300px); height: auto; }
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { display: none; }
+  }
+
+  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  @media (max-width: 760px) { .paths { grid-template-columns: 1fr; } }
+  .path {
+    position: relative; display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.75rem 1.75rem 2.25rem; border-radius: calc(var(--radius) + 4px);
+    background: var(--teal); color: #eaf3f2; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .path.alt { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+  .path:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(20 63 68 / 0.18); color: inherit; }
+  .path.alt:hover { color: var(--ink); }
+  .path strong { font-family: var(--font-display); font-weight: 560; font-size: 1.6rem; line-height: 1.2; color: #fff; }
+  .path.alt strong { color: var(--teal-deep); }
+  .tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sun-soft); }
+  .path.alt .tag { color: var(--teal); }
+  .arrow { position: absolute; right: 1.5rem; bottom: 1.1rem; font-size: 1.6rem; color: var(--sun); }
+
+  .facts-block { margin-top: 2.5rem; }
+  .body { margin-top: 1.5rem; }
+  .body :global(h2:first-child) { margin-top: 1.5rem; }
+</style>
