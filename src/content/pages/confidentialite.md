@@ -14,7 +14,8 @@ L'étude respecte la **loi fédérale relative à la recherche sur l'être humai
 
 ## Sur ce site
 
-- Ce site **n'utilise pas de cookies** et ne mesure pas votre visite.
-- Les polices de caractères sont hébergées sur le site lui-même.
-- La vidéo est chargée depuis YouTube (mode « sans cookies ») **seulement si vous cliquez dessus**.
+- Ce site **ne dépose aucun cookie** et n'enregistre rien dans votre navigateur.
+- Il **ne mesure pas votre visite** : pas de statistiques, pas de publicité, pas de suivi.
+- Tout est hébergé sur le site lui-même (textes, images, polices de caractères). Aucun service tiers (Google, YouTube, réseaux sociaux) n'est contacté pendant votre visite.
+- La vidéo et le plan sont de **simples liens** : ils ne s'ouvrent sur YouTube ou Google Maps que si vous cliquez, dans un nouvel onglet.
 - Si vous nous écrivez, votre message est utilisé uniquement pour vous répondre.

@@ -1,9 +1,11 @@
 ---
-// Vidéo respectueuse de la vie privée : rien n'est chargé depuis YouTube avant le clic.
+// Vidéo sans aucun contact avec YouTube depuis ce site :
+// - fichier local (src) → lecteur intégré ;
+// - YouTube → simple lien qui ouvre la vidéo sur youtube.com dans un nouvel onglet.
+// Aucune image, aucun script ni cookie de YouTube n'est chargé ici.
 import site from '../data/site.json';
 interface Props { youtube?: string; src?: string; poster?: string; caption: string }
-const { youtube, src, poster, caption } = Astro.props;
-const thumb = poster ?? (youtube ? `https://i.ytimg.com/vi/${youtube}/hqdefault.jpg` : undefined);
+const { youtube, src, poster = '/images/peps-illustration.jpg', caption } = Astro.props;
 ---
 <figure class="video">
   {src ? (
@@ -11,56 +13,45 @@ const thumb = poster ?? (youtube ? `https://i.ytimg.com/vi/${youtube}/hqdefault.
       <track kind="captions" srclang="fr" label="Français" src={src.replace(/\.\w+$/, '.vtt')} default />
     </video>
   ) : youtube ? (
-    <button class="facade" type="button" data-yt={youtube} aria-label={`Lire la vidéo : ${caption}`}
-      style={thumb ? `background-image:url(${thumb})` : undefined}>
+    <a class="facade" href={`https://www.youtube.com/watch?v=${youtube}`} target="_blank" rel="noopener noreferrer"
+      style={`background-image:url(${poster})`} aria-label={`Regarder la vidéo sur YouTube : ${caption}`}>
+      <span class="veil" aria-hidden="true"></span>
       <span class="play" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
       </span>
-      <span class="note">La vidéo sera chargée depuis YouTube (sans cookies).</span>
-    </button>
+      <span class="note">Regarder sur YouTube (nouvel onglet)</span>
+    </a>
   ) : (
     <div class="placeholder">
-      <span>{site.draft ? 'Vidéo IRM — à ajouter (identifiant YouTube ou fichier dans public/videos/)' : 'Vidéo bientôt disponible'}</span>
+      <span>{site.draft ? 'Vidéo — à ajouter (identifiant YouTube ou fichier dans public/videos/)' : 'Vidéo bientôt disponible'}</span>
     </div>
   )}
   <figcaption>{caption}</figcaption>
 </figure>
 
-<script>
-  document.querySelectorAll<HTMLButtonElement>('button[data-yt]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0&cc_load_policy=1&hl=fr`;
-      iframe.title = btn.getAttribute('aria-label') ?? 'Vidéo';
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      iframe.allowFullscreen = true;
-      btn.replaceWith(iframe);
-    }, { once: true });
-  });
-</script>
-
 <style>
   .video { margin: 0 0 2.5rem; }
-  video, .facade, .placeholder, .video :global(iframe) {
-    display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); background: var(--surface-2);
+  video, .facade, .placeholder {
+    display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: calc(var(--radius) * 2); background: var(--surface-2);
   }
   .facade {
-    position: relative; cursor: pointer; background-size: cover; background-position: center;
-    display: grid; place-items: center; padding: 0; font: inherit;
+    position: relative; overflow: hidden; background-size: contain; background-repeat: no-repeat; background-position: center;
+    background-color: #fff; display: grid; place-items: center; text-decoration: none; box-shadow: 0 0 0 1px var(--line);
   }
+  .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(28 61 69 / 0.05), rgb(28 61 69 / 0.35)); transition: background 0.25s; }
+  .facade:hover .veil { background: linear-gradient(180deg, rgb(28 61 69 / 0.1), rgb(28 61 69 / 0.5)); }
   .play {
-    display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
-    background: var(--teal); color: #fff; box-shadow: 0 6px 24px rgb(0 0 0 / 0.2); transition: transform 0.15s;
+    position: relative; display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
+    background: var(--teal); color: #fff; box-shadow: 0 10px 30px rgb(0 0 0 / 0.25); transition: transform 0.2s;
   }
-  .facade:hover .play { transform: scale(1.06); }
+  .facade:hover .play { transform: scale(1.07); }
   .note {
-    position: absolute; bottom: 0.75rem; left: 50%; transform: translateX(-50%);
-    background: rgb(0 0 0 / 0.6); color: #fff; font-size: 0.8rem; padding: 0.25rem 0.7rem; border-radius: 999px; white-space: nowrap;
+    position: absolute; bottom: 0.9rem; left: 50%; transform: translateX(-50%);
+    background: rgb(0 0 0 / 0.65); color: #fff; font-size: 0.85rem; padding: 0.3rem 0.8rem; border-radius: 999px; white-space: nowrap;
   }
   .placeholder {
     display: grid; place-items: center; text-align: center; padding: 1rem;
     border: 2px dashed var(--line); color: var(--ink-soft);
-    background: repeating-linear-gradient(135deg, var(--surface), var(--surface) 14px, var(--paper) 14px, var(--paper) 28px);
   }
   .placeholder span { background: var(--paper); padding: 0.4rem 0.8rem; border-radius: 8px; }
   figcaption { margin-top: 0.6rem; font-size: 0.92rem; color: var(--ink-soft); }

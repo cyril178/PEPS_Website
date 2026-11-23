@@ -19,7 +19,7 @@ Tout le texte est dans des fichiers simples, aucun code à toucher :
 
 
 - **Ajouter une page** : créer `src/content/pages/ma-page.md` (même en-tête que les autres) → elle est publiée sur `/ma-page/`. L'ajouter au menu dans `site.json` si besoin.
-- **Vidéo** : mettre l'identifiant YouTube (`youtube: "dQw4w9WgXcQ"`, la partie après `v=`), de préférence en vidéo « non répertoriée ». Elle ne se charge qu'au clic, via youtube-nocookie. Un fichier local dans `public/videos/` marche aussi (`src: /videos/irm.mp4`), mais 25 Mo maximum par fichier sur Cloudflare.
+- **Vidéo** : mettre l'identifiant YouTube (`youtube: "dQw4w9WgXcQ"`, la partie après `v=`), de préférence en vidéo « non répertoriée ». Le site affiche un simple lien vers YouTube (nouvel onglet) : rien n'est chargé depuis YouTube sur le site, donc aucun cookie. Un fichier local dans `public/videos/` marche aussi (`src: /videos/irm.mp4`), mais 25 Mo maximum par fichier sur Cloudflare.
 
 ### Les « [À COMPLÉTER : …] »
 
@@ -91,4 +91,4 @@ src/
 wrangler.jsonc      ← config Cloudflare (site statique, page 404)
 ```
 
-Pas de cookies, pas d'outil de mesure d'audience, pas de police Google chargée à distance.
+Aucun cookie, aucun stockage dans le navigateur, aucun outil de mesure d'audience, aucune requête vers un service tiers (vérifiable : voir « Protection des données »). Ne pas activer « Web Analytics » dans Cloudflare.
