@@ -33,7 +33,7 @@ const { eyebrow, title, lead, image } = Astro.props;
     pointer-events: none;
   }
   .inner { position: relative; display: grid; gap: 2rem; align-items: center; }
-  .has-image .inner { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .has-image .inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
   h1 { max-width: 20ch; }
   .lead { font-size: 1.2em; max-width: 52ch; color: var(--ink-soft); margin: 0; }
   .art { margin: 0; }
@@ -43,7 +43,7 @@ const { eyebrow, title, lead, image } = Astro.props;
   }
   @media (max-width: 760px) {
     .has-image .inner { grid-template-columns: 1fr; }
-    .art img { max-width: 420px; }
+    .art img { max-width: 560px; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .text, .art { animation: rise 0.7s cubic-bezier(.2,.7,.2,1) both; }
