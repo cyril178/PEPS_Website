@@ -8,8 +8,8 @@ const faq = await getCollection('faq');
 
 const groups = [
   { key: 'tous', title: 'Pour tout le monde' },
-  { key: 'patients', title: 'Programme PEPS' },
-  { key: 'controles', title: 'Participant·es contrôles' },
+  { key: 'patients', title: 'Participer au programme PEPS' },
+  { key: 'controles', title: 'Volontaires sain·es' },
 ].map((g) => ({ ...g, items: faq.filter((f) => f.data.audience === g.key) }))
  .filter((g) => g.items.length);
 ---

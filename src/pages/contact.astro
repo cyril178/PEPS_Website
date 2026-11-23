@@ -1,12 +1,11 @@
 ---
-import { getEntry, getCollection, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import site from '../data/site.json';
 
 const page = await getEntry('pages', 'contact');
 if (!page) throw new Error('src/content/pages/contact.md manquant');
-const team = await getCollection('team');
 const { Content } = await render(page);
 const c = site.contact;
 const tel = c.phone.replace(/[^\d+]/g, '');
@@ -31,15 +30,41 @@ const tel = c.phone.replace(/[^\d+]/g, '');
     </aside>
   </div>
 
-  <section class="wrap team">
-    <h2>L'équipe</h2>
-    <ul>
-      {team.map((m) => (
-        <li><strong>{m.data.name}</strong><span>{m.data.role}</span></li>
-      ))}
-    </ul>
+  <section class="wrap form-block" aria-labelledby="ecrire">
+    <h2 id="ecrire">Laisser un message</h2>
+    <p class="hint">Trois champs, c'est tout. Indiquez simplement comment vous préférez être recontacté·e : téléphone ou e-mail, comme vous voulez.</p>
+    <form id="contact-form" action={`mailto:${c.email}`} method="post" enctype="text/plain" data-email={c.email}>
+      <label for="f-nom">Votre prénom <span>(ou un pseudonyme)</span></label>
+      <input id="f-nom" name="Prénom" autocomplete="given-name" required />
+
+      <label for="f-joindre">Comment vous joindre ? <span>(téléphone ou e-mail)</span></label>
+      <input id="f-joindre" name="Pour me joindre" required />
+
+      <label for="f-message">Votre message <span>(facultatif)</span></label>
+      <textarea id="f-message" name="Message" rows="4" placeholder="Par exemple : j'aimerais en savoir plus, rappelez-moi le matin."></textarea>
+
+      <button class="button" type="submit">Envoyer</button>
+      <p class="small">Votre programme d'e-mail s'ouvre avec le message prêt à partir. Rien n'est enregistré sur ce site.</p>
+    </form>
+  </section>
+
+  <section class="wrap">
+    <a class="volunteer" href="/controles/">
+      <strong>Vous n'avez pas de trouble psychiatrique ?</strong>
+      <span>Devenez volontaire sain·e pour l'étude →</span>
+    </a>
   </section>
 </Base>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const body = [...data.entries()].map(([k, v]) => `${k} : ${v}`).join('\n');
+    window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Étude PEPS — message du site')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
 
 <style>
   .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
@@ -52,7 +77,21 @@ const tel = c.phone.replace(/[^\d+]/g, '');
   dl { margin: 1.25rem 0 0; }
   dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--sun-soft); margin-top: 1rem; }
   dd { margin: 0.15rem 0 0; font-size: 1.08rem; }
-  .team ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-  .team li { background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.2rem; }
-  .team li span { font-size: 0.95rem; color: var(--ink-soft); }
+  .form-block { max-width: var(--measure); }
+  .hint { color: var(--ink-soft); }
+  form { display: grid; gap: 0.4rem; margin-top: 1.5rem; }
+  label { font-weight: 700; color: var(--teal-deep); margin-top: 0.9rem; }
+  label span { font-weight: 400; color: var(--ink-soft); }
+  input, textarea {
+    font: inherit; padding: 0.8rem 1rem; border: 2px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); width: 100%;
+  }
+  input:focus, textarea:focus { border-color: var(--teal); outline: none; }
+  form .button { justify-self: start; margin-top: 1.25rem; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+  .small { font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 0; }
+  .volunteer {
+    display: flex; flex-direction: column; gap: 0.25rem; margin-top: 3.5rem; max-width: var(--measure);
+    padding: 1.4rem 1.6rem; border-radius: var(--radius); background: var(--surface); text-decoration: none; color: var(--ink);
+  }
+  .volunteer strong { color: var(--teal-deep); font-size: 1.1rem; }
+  .volunteer span { color: var(--teal); font-weight: 700; }
 </style>

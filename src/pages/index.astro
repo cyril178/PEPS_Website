@@ -3,6 +3,7 @@ import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Facts from '../components/Facts.astro';
 import Sun from '../components/Sun.astro';
+import Journey from '../components/Journey.astro';
 import site from '../data/site.json';
 
 const page = await getEntry('pages', 'accueil');
@@ -17,7 +18,7 @@ const { Content } = await render(page);
         <h1>{site.tagline}</h1>
         <p class="lead">{page.data.description}</p>
         <div class="actions">
-          <a class="button" href="/patients/">Découvrir l'étude</a>
+          <a class="button" href="/participer/">Comment participer ?</a>
           <a class="button ghost" href="/contact/">Nous contacter</a>
         </div>
       </div>
@@ -27,28 +28,30 @@ const { Content } = await render(page);
     </div>
   </section>
 
-  <section class="wrap paths" aria-label="Choisir votre parcours">
-    <a class="path" href="/patients/">
-      <span class="tag">Vous vivez avec une schizophrénie</span>
-      <strong>Participer au programme PEPS</strong>
-      <span>8 séances de groupe, des entretiens et deux IRM. Découvrez comment ça se passe.</span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
-    <a class="path alt" href="/controles/">
-      <span class="tag">Vous n'avez pas de trouble psychiatrique</span>
-      <strong>Devenir participant·e contrôle</strong>
-      <span>Une séance d'IRM et quelques questionnaires, pour faire avancer la recherche.</span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
-  </section>
-
   {page.data.facts && <div class="wrap facts-block"><Facts facts={page.data.facts} /></div>}
 
   <section class="wrap body">
     <div class="prose">
       <Content />
-      <p><a href="/irm/">Voir comment se passe une séance d'IRM, en vidéo →</a></p>
+      <p><a href="/pourquoi/">Voir l'étude expliquée en vidéo →</a></p>
     </div>
+  </section>
+
+  {page.data.journey && (
+    <section class="wrap journey-block" aria-labelledby="parcours">
+      <h2 id="parcours">Votre parcours, étape par étape</h2>
+      <Journey steps={page.data.journey} />
+      <p class="journey-cta"><a class="button" href="/participer/">Comment participer ?</a></p>
+    </section>
+  )}
+
+  <section class="wrap paths" aria-label="Autres participant·es">
+    <a class="path alt" href="/controles/">
+      <span class="tag">Vous n'avez pas de trouble psychiatrique ?</span>
+      <strong>Devenir volontaire sain·e</strong>
+      <span>Des questionnaires et une IRM, deux fois, pour nous aider à comparer.</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
   </section>
 </Base>
 
@@ -69,8 +72,9 @@ const { Content } = await render(page);
     .hero-art { display: none; }
   }
 
-  .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  @media (max-width: 760px) { .paths { grid-template-columns: 1fr; } }
+  .paths { display: grid; margin-top: 4rem; max-width: 640px; }
+  .journey-block h2 { margin-top: 3.5rem; }
+  .journey-cta { margin-top: 2rem; }
   .path {
     position: relative; display: flex; flex-direction: column; gap: 0.5rem;
     padding: 1.75rem 1.75rem 2.25rem; border-radius: calc(var(--radius) + 4px);
@@ -87,6 +91,6 @@ const { Content } = await render(page);
   .arrow { position: absolute; right: 1.5rem; bottom: 1.1rem; font-size: 1.6rem; color: var(--sun); }
 
   .facts-block { margin-top: 2.5rem; }
-  .body { margin-top: 1.5rem; }
+  .body { margin-top: 3rem; }
   .body :global(h2:first-child) { margin-top: 1.5rem; }
 </style>

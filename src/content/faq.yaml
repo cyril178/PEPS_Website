@@ -1,27 +1,48 @@
 # Questions fréquentes. audience : tous | patients | controles
-- id: obligation
-  question: Est-ce que je dois participer si mon médecin m'en parle ?
-  answer: Non. La participation est toujours volontaire. Vous pouvez refuser, ou arrêter à tout moment, sans donner de raison. Cela ne change rien à vos soins.
+# Les questions reprennent les inquiétudes les plus souvent entendues.
+- id: cobaye
+  question: Est-ce que je vais servir de « cobaye » ?
+  answer: "Non. On ne teste ni médicament ni produit sur vous. PEPS est un programme de groupe, déjà étudié chez d'autres personnes. Ce que nous cherchons à comprendre, c'est comment il agit. Vous êtes un·e partenaire de la recherche : nous vous expliquons chaque étape, et vous pouvez poser des questions à tout moment."
+  audience: patients
+
+- id: danger
+  question: Est-ce que l'étude est dangereuse ?
+  answer: "Les risques sont faibles. Parler en groupe peut parfois être un peu stressant : les animateurs·trices sont là pour vous accompagner, en lien avec l'équipe soignante du CAPPI. Les études précédentes sur PEPS n'ont pas montré de problème. En cas de difficulté, nous en parlons avec vous et avec votre psychiatre."
   audience: patients
 
 - id: traitement
   question: Est-ce que je dois changer mon traitement ?
-  answer: Non. Vous continuez votre traitement et votre suivi habituels. Nous vous demandons seulement de nous signaler les changements pendant l'étude.
+  answer: "Non. Vous continuez votre traitement et votre suivi habituels, et aucun médicament n'est interdit. PEPS s'ajoute à vos soins, il ne les remplace pas. Nous vous demandons seulement de nous signaler les changements pendant l'étude."
   audience: patients
+
+- id: obligation
+  question: Est-ce que je dois participer si mon médecin m'en parle ?
+  answer: "Non. La participation est toujours volontaire. Vous pouvez refuser, sans donner de raison. Cela ne change rien à vos soins."
+  audience: patients
+
+- id: arreter
+  question: Puis-je arrêter en cours de route ?
+  answer: "Oui, à tout moment et sans donner de raison. Il suffit de nous le dire. Arrêter ne change rien à vos soins."
+  audience: tous
 
 - id: groupe
   question: Je n'aime pas trop parler en groupe. Est-ce un problème ?
-  answer: Ce n'est pas un problème. Les groupes sont petits et bienveillants. Vous parlez quand vous le souhaitez, personne n'est obligé de tout partager.
+  answer: "Ce n'est pas un problème. Les groupes sont petits (environ 3 à 5 personnes) et bienveillants. Vous parlez quand vous le souhaitez, personne n'est obligé de tout partager."
   audience: patients
 
 - id: tirage
   question: Puis-je choisir mon groupe ?
-  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. [À COMPLÉTER : préciser si le groupe de comparaison pourra suivre PEPS à la fin de l'étude]."
+  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. Dans les deux groupes, vous gardez votre suivi habituel. [À COMPLÉTER : préciser si le groupe suivi habituel pourra suivre PEPS à la fin de l'étude]."
   audience: patients
+
+- id: irm-peur
+  question: L'IRM me fait peur. Comment ça se passe ?
+  answer: "C'est une peur fréquente. L'IRM ne fait pas mal et n'utilise pas de rayons X. Vous pouvez parler avec l'équipe à tout moment, et vous tenez une poire d'alarme : si vous appuyez, nous arrêtons tout de suite. Une crise d'angoisse dans l'appareil est très rare."
+  audience: tous
 
 - id: irm-danger
   question: L'IRM est-elle dangereuse ?
-  answer: Non, pour la plupart des personnes. L'IRM n'utilise pas de rayons X. Le seul risque vient du métal dans ou sur le corps, c'est pourquoi nous posons des questions de sécurité avant chaque séance.
+  answer: "Non, pour la plupart des personnes. Le seul risque vient du métal dans ou sur le corps. C'est pourquoi nous posons des questions de sécurité avant chaque séance."
   audience: tous
 
 - id: resultats-irm
@@ -31,15 +52,20 @@
 
 - id: dedommagement
   question: Suis-je dédommagé·e ?
-  answer: "[À COMPLÉTER : montant, modalités de paiement, remboursement des frais de transport]."
+  answer: "Oui : 20 CHF par heure d'évaluation. [À COMPLÉTER : modalités de paiement et remboursement des frais de transport]."
   audience: tous
 
-- id: controle-qui
-  question: Qui peut être participant·e contrôle ?
-  answer: Des adultes sans trouble psychiatrique ou neurologique connu, qui ne prennent pas de médicament psychiatrique et qui peuvent passer une IRM.
-  audience: controles
+- id: ethique
+  question: Qui contrôle cette étude ?
+  answer: "L'étude a été évaluée et approuvée par la Commission cantonale d'éthique de la recherche de Genève. Elle respecte la loi suisse sur la recherche avec des êtres humains. Avant de commencer, vous recevez un document d'information écrit, et vous signez seulement si vous êtes d'accord."
+  audience: tous
 
 - id: donnees
   question: Que deviennent mes données ?
-  answer: Elles sont codées (votre nom est remplacé par un numéro) et protégées selon la loi suisse. Les résultats sont publiés sans qu'on puisse vous reconnaître.
+  answer: "Elles sont codées : votre nom est remplacé par un numéro. Seule l'équipe de l'étude peut faire le lien. Les résultats sont publiés sans qu'on puisse vous reconnaître."
   audience: tous
+
+- id: controle-qui
+  question: Qui peut être volontaire sain·e ?
+  answer: "Des adultes de 18 à 60 ans, sans trouble psychiatrique ou neurologique connu, qui peuvent passer une IRM."
+  audience: controles
