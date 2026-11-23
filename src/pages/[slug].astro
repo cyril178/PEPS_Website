@@ -14,11 +14,12 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
-const { title, description, eyebrow, facts, video, cta } = page.data;
+const { title, description, eyebrow, facts, video, cta, image } = page.data;
 ---
 <Base title={title} description={description}>
   <PageHeader eyebrow={eyebrow} title={title} lead={description} />
   <div class="wrap">
+    {image && <img class="illustration" src={image.src} alt={image.alt} width={image.width} height={image.height} />}
     {facts && <div class="facts-block"><Facts facts={facts} /></div>}
     {video && <div class="video-block"><Video {...video} youtube={video.youtube || undefined} /></div>}
     <article class="prose">
@@ -35,6 +36,7 @@ const { title, description, eyebrow, facts, video, cta } = page.data;
 
 <style>
   .facts-block { margin-bottom: 2.5rem; }
+  .illustration { display: block; width: 100%; max-width: 420px; height: auto; border-radius: var(--radius); margin-bottom: 2rem; }
   .video-block { max-width: 860px; }
   .cta {
     margin-top: 3.5rem; max-width: var(--measure); padding: 1.75rem; border-radius: var(--radius);

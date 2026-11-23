@@ -10,10 +10,12 @@ cta:
   href: /contact/
 ---
 
-## PEPS : entraîner les émotions positives
+## Le problème : l'envie qui s'éteint
 
-PEPS est une psychothérapie de groupe de **8 séances**. Elle s'ajoute à votre suivi habituel. Comme un entraînement, elle aide à **savourer**, **exprimer** et **anticiper** les bons moments.
+Les symptômes dits « négatifs », comme la **perte de motivation ou de plaisir**, pèsent lourd au quotidien : activités, travail, relations. Aujourd'hui, peu de traitements les améliorent vraiment. Le programme [PEPS](/programme/) est une piste prometteuse.
 
 ## Pourquoi l'IRM ?
 
-L'IRM est comme un **appareil photo très précis** du cerveau. Elle montre quelles régions travaillent pendant un petit jeu. En comparant les images **avant et après** PEPS, nous voulons voir si le programme réveille le « moteur de la motivation » du cerveau.
+L'IRM est comme un **appareil photo très précis** du cerveau. Elle montre quelles régions travaillent pendant un petit jeu. En comparant les images **avant et après** PEPS, nous voulons voir si le programme réveille le « moteur de la motivation » du cerveau, une région profonde appelée **striatum**.
+
+![Coupes du cerveau vues par IRM : le striatum apparaît en couleur, au centre.](/images/irm-striatum.jpg)

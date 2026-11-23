@@ -1,6 +1,6 @@
 ---
 title: Nous contacter
-description: Une question sur l'étude PEPS, ou envie de participer ? Appelez-nous, écrivez-nous, ou laissez-nous un petit message.
+description: Une question sur l'étude PEPS, ou envie de participer ? Appelez-nous ou écrivez-nous.
 eyebrow: Contact
 ---
 

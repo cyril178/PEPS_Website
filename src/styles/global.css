@@ -1,23 +1,23 @@
 @import '@fontsource/atkinson-hyperlegible/400.css';
 @import '@fontsource/atkinson-hyperlegible/700.css';
 @import '@fontsource/atkinson-hyperlegible/400-italic.css';
-@import '@fontsource-variable/fraunces';
 
 :root {
-  --paper: #fbf7f0;
-  --surface: #f2eadd;
-  --surface-2: #e9dfcf;
-  --ink: #1f2a2e;
-  --ink-soft: #4a5659;
-  --teal: #1d5c63;
-  --teal-deep: #143f44;
-  --sun: #e39b3f;
-  --sun-soft: #f7dcb4;
-  --line: #ddd2c1;
-  --radius: 14px;
+  /* Thème sobre : blanc, gris légèrement bleutés, un seul accent bleu-pétrole */
+  --paper: #ffffff;
+  --surface: #f3f5f6;
+  --surface-2: #e7ebed;
+  --ink: #1d2528;
+  --ink-soft: #525e63;
+  --teal: #2b5d68;
+  --teal-deep: #1c3d45;
+  --sun: #2b5d68;
+  --sun-soft: #e3ebed;
+  --line: #d9dfe2;
+  --radius: 8px;
   --measure: 68ch;
   --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
-  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-display: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 
 *,
@@ -37,15 +37,14 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-optical-sizing: auto;
-  font-weight: 560;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--teal-deep);
   text-wrap: balance;
 }
-h1 { font-size: clamp(2.2rem, 4vw + 1rem, 3.6rem); margin: 0 0 0.4em; }
-h2 { font-size: clamp(1.5rem, 1.2vw + 1.1rem, 2rem); margin: 2.2em 0 0.6em; }
+h1 { font-size: clamp(2rem, 3vw + 1rem, 3rem); margin: 0 0 0.4em; }
+h2 { font-size: clamp(1.4rem, 1vw + 1.1rem, 1.75rem); margin: 2.2em 0 0.6em; }
 h3 { font-size: 1.25rem; margin: 1.8em 0 0.4em; }
 
 p, li { text-wrap: pretty; }
@@ -86,6 +85,7 @@ a:hover { color: var(--teal-deep); text-decoration-thickness: 2.5px; }
 }
 .prose blockquote p { margin: 0; }
 .prose strong { color: var(--teal-deep); }
+.prose img { display: block; max-width: min(100%, 520px); height: auto; border: 1px solid var(--line); border-radius: var(--radius); margin: 1.5rem 0; }
 
 .button {
   display: inline-flex;

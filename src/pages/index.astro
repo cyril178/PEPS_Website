@@ -2,7 +2,6 @@
 import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Facts from '../components/Facts.astro';
-import Sun from '../components/Sun.astro';
 import Journey from '../components/Journey.astro';
 import site from '../data/site.json';
 
@@ -22,9 +21,9 @@ const { Content } = await render(page);
           <a class="button ghost" href="/contact/">Nous contacter</a>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <Sun size={260} />
-      </div>
+      <figure class="hero-art">
+        <img src="/images/peps-groupe.jpg" width="298" height="169" alt="Illustration : quatre personnes discutent et sourient ensemble." />
+      </figure>
     </div>
   </section>
 
@@ -33,7 +32,7 @@ const { Content } = await render(page);
   <section class="wrap body">
     <div class="prose">
       <Content />
-      <p><a href="/pourquoi/">Voir l'étude expliquée en vidéo →</a></p>
+      <p><a href="/programme/">Découvrir le programme PEPS →</a> · <a href="/pourquoi/">L'étude en vidéo →</a></p>
     </div>
   </section>
 
@@ -58,7 +57,8 @@ const { Content } = await render(page);
 <style>
   .hero {
     padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
-    background: radial-gradient(90% 120% at 85% 10%, var(--sun-soft) 0%, transparent 60%);
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
     overflow: hidden;
   }
   .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: 2rem; }
@@ -66,10 +66,11 @@ const { Content } = await render(page);
   .lead { font-size: 1.22em; color: var(--ink-soft); max-width: 46ch; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
   .hero-art { display: grid; place-items: center; }
-  .hero-art :global(svg) { width: min(100%, 300px); height: auto; }
+  .hero-art { margin: 0; }
+  .hero-art img { width: 100%; max-width: 420px; height: auto; border-radius: var(--radius); background: #fff; }
   @media (max-width: 760px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-art { display: none; }
+    .hero-art img { max-width: 320px; }
   }
 
   .paths { display: grid; margin-top: 4rem; max-width: 640px; }
@@ -84,7 +85,7 @@ const { Content } = await render(page);
   .path.alt { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
   .path:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(20 63 68 / 0.18); color: inherit; }
   .path.alt:hover { color: var(--ink); }
-  .path strong { font-family: var(--font-display); font-weight: 560; font-size: 1.6rem; line-height: 1.2; color: #fff; }
+  .path strong { font-weight: 700; font-size: 1.4rem; line-height: 1.2; color: #fff; }
   .path.alt strong { color: var(--teal-deep); }
   .tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sun-soft); }
   .path.alt .tag { color: var(--teal); }

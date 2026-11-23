@@ -21,6 +21,7 @@
   },
   "nav": [
     { "label": "Participer", "href": "/participer/" },
+    { "label": "Le programme", "href": "/programme/" },
     { "label": "Pourquoi cette étude ?", "href": "/pourquoi/" },
     { "label": "Questions", "href": "/faq/" },
     { "label": "L'équipe", "href": "/equipe/" },

@@ -54,24 +54,6 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
     <p><a class="button ghost" href="https://www.google.com/maps/search/?api=1&query=Campus+Biotech%2C+Chemin+des+Mines+9%2C+1202+Gen%C3%A8ve" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
   </section>
 
-  <section class="wrap form-block" aria-labelledby="ecrire">
-    <h2 id="ecrire">Laisser un message</h2>
-    <p class="hint">Trois champs, c'est tout. Indiquez simplement comment vous préférez être recontacté·e : téléphone ou e-mail, comme vous voulez.</p>
-    <form id="contact-form" action={`mailto:${c.email}`} method="post" enctype="text/plain" data-email={c.email}>
-      <label for="f-nom">Votre prénom <span>(ou un pseudonyme)</span></label>
-      <input id="f-nom" name="Prénom" autocomplete="given-name" required />
-
-      <label for="f-joindre">Comment vous joindre ? <span>(téléphone ou e-mail)</span></label>
-      <input id="f-joindre" name="Pour me joindre" required />
-
-      <label for="f-message">Votre message <span>(facultatif)</span></label>
-      <textarea id="f-message" name="Message" rows="4" placeholder="Par exemple : j'aimerais en savoir plus, rappelez-moi le matin."></textarea>
-
-      <button class="button" type="submit">Envoyer</button>
-      <p class="small">Votre programme d'e-mail s'ouvre avec le message prêt à partir. Rien n'est enregistré sur ce site.</p>
-    </form>
-  </section>
-
   <section class="wrap">
     <a class="volunteer" href="/controles/">
       <strong>Vous êtes en bonne santé ?</strong>
@@ -80,15 +62,6 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
   </section>
 </Base>
 
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const body = [...data.entries()].map(([k, v]) => `${k} : ${v}`).join('\n');
-    window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Étude PEPS — message du site')}&body=${encodeURIComponent(body)}`;
-  });
-</script>
 
 <style>
   .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: start; }
@@ -99,13 +72,12 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
   .second { margin: 2rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgb(255 255 255 / 0.2); }
   .access { font-size: 0.95rem; color: var(--sun-soft); }
   dd a { overflow-wrap: anywhere; }
-  .who strong { font-family: var(--font-display); font-size: 1.4rem; font-weight: 560; color: #fff; }
+  .who strong { font-size: 1.3rem; font-weight: 700; color: #fff; }
   .who span { font-size: 0.95rem; color: var(--sun-soft); }
   dl { margin: 1.25rem 0 0; }
   dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--sun-soft); margin-top: 1rem; }
   dd { margin: 0.15rem 0 0; font-size: 1.08rem; }
-  .form-block { max-width: var(--measure); }
-  .acces { max-width: var(--measure); margin-top: 1rem; }
+  .acces { max-width: var(--measure); margin-top: 3rem; }
   .acces dl { display: grid; gap: 0.75rem; margin: 1rem 0; }
   .acces dl div { background: var(--surface); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
   .acces dt { color: var(--teal); margin-top: 0; }
@@ -113,16 +85,6 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
   .photo { margin: 1rem 0 0; }
   .photo img { display: block; width: 100%; max-width: 360px; height: auto; border-radius: var(--radius); }
   .photo figcaption { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.4rem; }
-  .hint { color: var(--ink-soft); }
-  form { display: grid; gap: 0.4rem; margin-top: 1.5rem; }
-  label { font-weight: 700; color: var(--teal-deep); margin-top: 0.9rem; }
-  label span { font-weight: 400; color: var(--ink-soft); }
-  input, textarea {
-    font: inherit; padding: 0.8rem 1rem; border: 2px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); width: 100%;
-  }
-  input:focus, textarea:focus { border-color: var(--teal); outline: none; }
-  form .button { justify-self: start; margin-top: 1.25rem; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
-  .small { font-size: 0.9rem; color: var(--ink-soft); margin: 0.5rem 0 0; }
   .volunteer {
     display: flex; flex-direction: column; gap: 0.25rem; margin-top: 3.5rem; max-width: var(--measure);
     padding: 1.4rem 1.6rem; border-radius: var(--radius); background: var(--surface); text-decoration: none; color: var(--ink);
