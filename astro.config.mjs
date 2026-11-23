@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import todoCheck from './src/integrations/todo-check.mjs';
 
 export default defineConfig({
@@ -7,5 +8,5 @@ export default defineConfig({
   site: 'https://peps-website.cyril17891.workers.dev',
   output: 'static',
   build: { format: 'directory' },
-  integrations: [todoCheck()],
+  integrations: [mdx(), todoCheck()],
 });

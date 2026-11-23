@@ -1,0 +1,30 @@
+---
+// Grille de cartes avec icône. Avec href → carte cliquable.
+import Icon from './Icon.astro';
+interface Item { icon: string; title: string; text: string; href?: string; more?: string }
+interface Props { items: Item[]; cols?: number }
+const { items, cols = 3 } = Astro.props;
+---
+<div class="cards full reveal" style={`--cols:${cols}`}>
+  {items.map((it, i) => {
+    const inner = (
+      <>
+        <span class="icon-badge"><Icon name={it.icon as any} /></span>
+        <strong>{it.title}</strong>
+        <p>{it.text}</p>
+        {it.href && <span class="more">{it.more ?? 'En savoir plus'} <Icon name="arrow" size={16} /></span>}
+      </>
+    );
+    return it.href
+      ? <a class="card-link" href={it.href} style={`--d:${i}`}>{inner}</a>
+      : <div class="card-link static" style={`--d:${i}`}>{inner}</div>;
+  })}
+</div>
+
+<style>
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
+  @media (min-width: 900px) { .cards { grid-template-columns: repeat(var(--cols), 1fr); } }
+  .static:hover { transform: none; box-shadow: none; }
+  .static:hover .icon-badge { background: var(--sun-soft); color: var(--teal); }
+  :global(.prose) .cards p { margin: 0; }
+</style>

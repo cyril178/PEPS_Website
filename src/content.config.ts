@@ -4,13 +4,13 @@ import { z } from 'astro/zod';
 
 // Une page = un fichier Markdown dans src/content/pages/
 const pages = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/pages' }),
+  loader: glob({ pattern: '*.{md,mdx}', base: './src/content/pages' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     eyebrow: z.string().optional(),
     // Encadré « en bref » affiché en haut de page
-    facts: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+    facts: z.array(z.object({ label: z.string(), value: z.string(), icon: z.string().optional() })).optional(),
     // Vidéo : soit un identifiant YouTube, soit un fichier dans /public/videos (< 25 Mo)
     video: z
       .object({
@@ -22,8 +22,6 @@ const pages = defineCollection({
       .optional(),
     // Illustration affichée en haut de page
     image: z.object({ src: z.string(), alt: z.string(), width: z.number(), height: z.number() }).optional(),
-    // Frise « votre parcours » (page d'accueil)
-    journey: z.array(z.object({ title: z.string(), text: z.string() })).optional(),
     // Bouton d'appel à l'action en bas de page
     cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }),

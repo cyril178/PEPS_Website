@@ -1,11 +1,11 @@
 ---
 title: Nous contacter
-description: Une question sur l'étude PEPS, ou envie de participer ? Appelez-nous ou écrivez-nous.
+description: Les coordonnées de l'équipe de l'étude PEPS et l'accès au Campus Biotech.
 eyebrow: Contact
 ---
 
-Vous avez une question, ou vous souhaitez participer ? **Un premier échange ne vous engage à rien.** Choisissez le moyen le plus simple pour vous.
+Pour toute question sur l'étude, vous pouvez joindre l'équipe **par téléphone ou par e-mail**.
 
-Vous pouvez aussi en parler à votre psychiatre ou à votre équipe soignante : ils peuvent nous contacter pour vous.
+Vous pouvez aussi en parler à votre psychiatre ou à votre équipe soignante.
 
 Merci de ne pas nous envoyer d'informations médicales. Nous en parlerons ensemble, de vive voix.

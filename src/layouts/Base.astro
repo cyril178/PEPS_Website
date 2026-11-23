@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import site from '../data/site.json';
-import Sun from '../components/Sun.astro';
 
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
@@ -24,6 +23,7 @@ const canonical = new URL(path, Astro.site);
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_CH" />
     {site.draft && <meta name="robots" content="noindex, nofollow" />}
+    <script is:inline>document.documentElement.classList.add('js');</script>
   </head>
   <body>
     <a class="skip" href="#contenu">Aller au contenu</a>
@@ -39,8 +39,8 @@ const canonical = new URL(path, Astro.site);
     <header class="site-header">
       <div class="wrap bar">
         <a class="brand" href="/" aria-label={`${site.name} — accueil`}>
-          <Sun size={38} />
-          <span>PEPS</span>
+          <span class="mark" aria-hidden="true">P</span>
+          <span class="name">PEPS<small>Étude · Genève</small></span>
         </a>
         <nav aria-label="Navigation principale">
           <ul>
@@ -58,10 +58,29 @@ const canonical = new URL(path, Astro.site);
       <slot />
     </main>
 
+    <script>
+      // Apparition douce des blocs .reveal au défilement + ombre de l'en-tête.
+      const items = document.querySelectorAll<HTMLElement>('.reveal');
+      const show = (el: Element) => el.classList.add('in');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+        items.forEach((el) => io.observe(el));
+      } else items.forEach(show);
+      // Sécurité : tout est visible après 3 s quoi qu'il arrive.
+      setTimeout(() => items.forEach(show), 3000);
+
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    </script>
+
     <footer class="site-footer">
       <div class="wrap cols">
         <div>
-          <p class="foot-brand"><Sun size={28} horizon="#fbf7f0" /> {site.name}</p>
+          <p class="foot-brand">{site.name}</p>
           <p>{site.institution}</p>
           <p class="small">{site.ethics}</p>
         </div>
@@ -89,12 +108,16 @@ const canonical = new URL(path, Astro.site);
 <style>
   .draft { background: #ffe27a; color: #4a3a00; font-size: 0.9rem; padding: 0.5rem 0; }
 
-  .site-header { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 5; }
+  .site-header { border-bottom: 1px solid transparent; background: rgb(255 255 255 / 0.86); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); position: sticky; top: 0; z-index: 5; transition: border-color 0.2s, box-shadow 0.2s; view-transition-name: site-header; }
+  .site-header.scrolled { border-color: var(--line); box-shadow: 0 6px 24px -18px rgb(28 61 69 / 0.5); }
   .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.8rem; flex-wrap: wrap; }
-  .brand {
-    display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none;
-    font-weight: 700; font-size: 1.45rem; color: var(--teal-deep); letter-spacing: 0.02em;
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--teal-deep); }
+  .mark {
+    display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 9px;
+    background: var(--teal); color: #fff; font-weight: 700; font-size: 1.2rem;
   }
+  .name { display: flex; flex-direction: column; line-height: 1.05; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; }
+  .name small { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.15rem; }
   nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 0.4rem; margin: 0; padding: 0; }
   nav a {
     display: block; padding: 0.45rem 0.8rem; border-radius: 999px; text-decoration: none;
@@ -104,7 +127,7 @@ const canonical = new URL(path, Astro.site);
   nav a[aria-current='page'] { background: var(--teal); color: #fff; }
 
   @media (max-width: 760px) {
-    .site-header { position: static; }
+    .site-header { position: static; border-color: var(--line); }
     nav { width: 100%; }
     nav ul { gap: 0.3rem; }
     nav a { background: var(--surface); font-size: 0.95rem; }

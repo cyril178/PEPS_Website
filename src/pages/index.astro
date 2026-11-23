@@ -2,8 +2,9 @@
 import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Facts from '../components/Facts.astro';
-import Journey from '../components/Journey.astro';
-import site from '../data/site.json';
+import Cards from '../components/Cards.astro';
+import StudyFlow from '../components/StudyFlow.astro';
+import Icon from '../components/Icon.astro';
 
 const page = await getEntry('pages', 'accueil');
 if (!page) throw new Error('src/content/pages/accueil.md manquant');
@@ -11,14 +12,16 @@ const { Content } = await render(page);
 ---
 <Base title={page.data.title} description={page.data.description}>
   <section class="hero">
+    <div class="blob b1" aria-hidden="true"></div>
+    <div class="blob b2" aria-hidden="true"></div>
     <div class="wrap hero-grid">
-      <div>
+      <div class="hero-text">
         <span class="eyebrow">{page.data.eyebrow}</span>
-        <h1>{site.tagline}</h1>
+        <h1>Retrouver l'envie et le <span class="hl">plaisir</span> au quotidien</h1>
         <p class="lead">{page.data.description}</p>
         <div class="actions">
-          <a class="button" href="/participer/">Comment participer ?</a>
-          <a class="button ghost" href="/contact/">Nous contacter</a>
+          <a class="button" href="/programme/">Le programme PEPS <Icon name="arrow" size={18} /></a>
+          <a class="button ghost" href="/participer/">Déroulement de l'étude</a>
         </div>
       </div>
       <figure class="hero-art">
@@ -29,69 +32,124 @@ const { Content } = await render(page);
 
   {page.data.facts && <div class="wrap facts-block"><Facts facts={page.data.facts} /></div>}
 
-  <section class="wrap body">
-    <div class="prose">
-      <Content />
-      <p><a href="/programme/">Découvrir le programme PEPS →</a> · <a href="/pourquoi/">L'étude en vidéo →</a></p>
+  <section class="wrap intro">
+    <div class="prose reveal"><Content /></div>
+    <Cards items={[
+      { icon: 'group', title: 'Le programme PEPS', text: '8 séances de groupe pour apprendre à savourer et anticiper les bons moments.', href: '/programme/', more: 'Découvrir le programme' },
+      { icon: 'brain', title: 'Pourquoi cette étude ?', text: "Comprendre ce qui se passe dans le cerveau grâce à l'IRM, en vidéo.", href: '/pourquoi/', more: "Voir l'explication" },
+      { icon: 'scan', title: "L'IRM", text: 'Comment se passe une séance, la sécurité, ce qu’il faut savoir avant de venir.', href: '/irm/', more: "Tout sur l'IRM" },
+    ]} />
+  </section>
+
+  <section class="band" aria-labelledby="deroulement">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Environ 4 mois</span>
+        <h2 id="deroulement">Le déroulement de l'étude</h2>
+        <p>Un tirage au sort répartit les participant·es en deux groupes. Tout le monde fait les mêmes mesures au début et à la fin.</p>
+      </div>
+      <StudyFlow variant="patients" />
+      <p class="reveal"><a class="link-arrow" href="/participer/">Toutes les informations sur le déroulement <Icon name="arrow" size={16} /></a></p>
     </div>
   </section>
 
-  {page.data.journey && (
-    <section class="wrap journey-block" aria-labelledby="parcours">
-      <h2 id="parcours">Votre parcours, étape par étape</h2>
-      <Journey steps={page.data.journey} />
-      <p class="journey-cta"><a class="button" href="/participer/">Comment participer ?</a></p>
-    </section>
-  )}
+  <section class="wrap video-band reveal">
+    <a class="video-card" href="/pourquoi/">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7z" fill="currentColor" /></svg></span>
+      <span class="vc-text">
+        <span class="eyebrow">En vidéo</span>
+        <strong>L'étude PEPS expliquée avec un patient partenaire</strong>
+        <span>Quelques minutes pour comprendre le programme et la recherche.</span>
+      </span>
+    </a>
+  </section>
 
-  <section class="wrap paths" aria-label="Autres participant·es">
-    <a class="path alt" href="/controles/">
-      <span class="tag">Vous êtes en bonne santé ?</span>
-      <strong>Participer comme volontaire</strong>
-      <span>Un entretien et une IRM, deux fois. Étude rémunérée (environ 200 CHF).</span>
-      <span class="arrow" aria-hidden="true">→</span>
+  <section class="wrap paths reveal" aria-label="Autres participant·es">
+    <a class="card-link volunteer" href="/controles/">
+      <span class="icon-badge"><Icon name="user" /></span>
+      <strong>Participant·es en bonne santé</strong>
+      <p>Le groupe de comparaison : un entretien et une IRM, deux fois, à 8 semaines d'intervalle.</p>
+      <span class="more">Informations pour les volontaires <Icon name="arrow" size={16} /></span>
     </a>
   </section>
 </Base>
 
 <style>
   .hero {
-    padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
-    background: var(--surface);
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
+    position: relative; overflow: hidden;
+    padding: clamp(3rem, 8vw, 6rem) 0 clamp(5rem, 9vw, 7rem);
+    background: linear-gradient(180deg, var(--surface), #eef3f4);
   }
-  .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; align-items: center; gap: 2rem; }
-  .hero h1 { max-width: 14ch; }
-  .lead { font-size: 1.22em; color: var(--ink-soft); max-width: 46ch; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; pointer-events: none; }
+  .b1 { width: 420px; height: 420px; right: -80px; top: -120px; background: rgb(43 93 104 / 0.22); }
+  .b2 { width: 320px; height: 320px; left: 30%; bottom: -200px; background: rgb(120 170 180 / 0.28); }
+  @media (prefers-reduced-motion: no-preference) {
+    .b1 { animation: drift 18s ease-in-out infinite alternate; }
+    .b2 { animation: drift 22s ease-in-out infinite alternate-reverse; }
+    @keyframes drift { to { transform: translate(-40px, 30px) scale(1.08); } }
+    .hero-text > * { animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-text > :nth-child(2) { animation-delay: 0.08s; }
+    .hero-text > :nth-child(3) { animation-delay: 0.16s; }
+    .hero-text > :nth-child(4) { animation-delay: 0.24s; }
+    .hero-art { animation: rise 0.9s 0.2s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-art img { animation: float 7s ease-in-out 1.2s infinite alternate; }
+    .hl::after { animation: underline 0.9s 0.6s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+    @keyframes float { to { transform: translateY(-8px); } }
+    @keyframes underline { from { transform: scaleX(0); } }
+  }
+
+  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 5vw, 4rem); }
+  .hero h1 { max-width: 15ch; font-size: clamp(2.2rem, 3.6vw + 1rem, 3.6rem); letter-spacing: -0.02em; }
+  .hl { position: relative; z-index: 0; white-space: nowrap; }
+  .hl::after {
+    content: ''; position: absolute; left: -2px; right: -2px; bottom: 0.06em; height: 0.28em; z-index: -1;
+    background: rgb(43 93 104 / 0.18); border-radius: 4px; transform-origin: left;
+  }
+  .lead { font-size: 1.15em; color: var(--ink-soft); max-width: 48ch; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
-  .hero-art { display: grid; place-items: center; }
-  .hero-art { margin: 0; }
-  .hero-art img { width: 100%; max-width: 420px; height: auto; border-radius: var(--radius); background: #fff; }
+  .hero-art { margin: 0; justify-self: center; }
+  .hero-art img {
+    display: block; width: 100%; max-width: 440px; height: auto; border-radius: 20px; background: #fff;
+    padding: 0.75rem; box-shadow: 0 30px 70px -35px rgb(28 61 69 / 0.55), 0 0 0 1px var(--line);
+  }
   @media (max-width: 760px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-art img { max-width: 320px; }
+    .hero-art img { max-width: 340px; }
   }
 
-  .paths { display: grid; margin-top: 4rem; max-width: 640px; }
-  .journey-block h2 { margin-top: 3.5rem; }
-  .journey-cta { margin-top: 2rem; }
-  .path {
-    position: relative; display: flex; flex-direction: column; gap: 0.5rem;
-    padding: 1.75rem 1.75rem 2.25rem; border-radius: calc(var(--radius) + 4px);
-    background: var(--teal); color: #eaf3f2; text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .path.alt { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
-  .path:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgb(20 63 68 / 0.18); color: inherit; }
-  .path.alt:hover { color: var(--ink); }
-  .path strong { font-weight: 700; font-size: 1.4rem; line-height: 1.2; color: #fff; }
-  .path.alt strong { color: var(--teal-deep); }
-  .tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sun-soft); }
-  .path.alt .tag { color: var(--teal); }
-  .arrow { position: absolute; right: 1.5rem; bottom: 1.1rem; font-size: 1.6rem; color: var(--sun); }
+  .facts-block { position: relative; margin-top: -3rem; }
+  .facts-block :global(dl > div) { box-shadow: 0 16px 36px -24px rgb(28 61 69 / 0.35); }
 
-  .facts-block { margin-top: 2.5rem; }
-  .body { margin-top: 3rem; }
-  .body :global(h2:first-child) { margin-top: 1.5rem; }
+  .intro { margin-top: clamp(2.5rem, 6vw, 4rem); }
+  .intro .prose :global(p) { font-size: 1.08em; }
+
+  .link-arrow { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+
+  .video-band { margin-top: clamp(3rem, 7vw, 5rem); }
+  .video-card {
+    position: relative; overflow: hidden; display: flex; align-items: center; gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: calc(var(--radius) * 2.5); text-decoration: none;
+    background: linear-gradient(120deg, var(--teal-deep), var(--teal)); color: #e8f0f1;
+  }
+  .video-card::before {
+    content: ''; position: absolute; right: -10%; top: -60%; width: 50%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(closest-side, rgb(255 255 255 / 0.14), transparent);
+  }
+  .video-card:hover { color: #fff; }
+  .play {
+    flex: none; display: grid; place-items: center; width: 4.5rem; height: 4.5rem; border-radius: 50%;
+    background: #fff; color: var(--teal-deep); box-shadow: 0 0 0 0 rgb(255 255 255 / 0.4);
+    transition: transform 0.25s;
+  }
+  .video-card:hover .play { transform: scale(1.08); }
+  @media (prefers-reduced-motion: no-preference) {
+    .play { animation: pulse 2.6s ease-out infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0.35); } 100% { box-shadow: 0 0 0 22px rgb(255 255 255 / 0); } }
+  }
+  .vc-text { position: relative; display: flex; flex-direction: column; gap: 0.2rem; }
+  .vc-text .eyebrow { color: #cfe1e4; margin: 0; }
+  .vc-text strong { font-size: clamp(1.2rem, 1vw + 1rem, 1.55rem); color: #fff; line-height: 1.25; }
+
+  .paths { margin-top: clamp(2.5rem, 6vw, 4rem); max-width: 640px; }
 </style>

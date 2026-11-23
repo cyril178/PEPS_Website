@@ -9,8 +9,9 @@ Tout le texte est dans des fichiers simples, aucun code à toucher :
 
 | Quoi | Fichier |
 |---|---|
-| Pages (accueil, participer, pourquoi, volontaires sains, IRM, contact, données) | `src/content/pages/*.md` |
-| Frise « Votre parcours » de l'accueil | champ `journey` dans `src/content/pages/accueil.md` |
+| Pages (accueil, programme, déroulement, pourquoi, volontaires, IRM, contact, données) | `src/content/pages/*.md` ou `*.mdx` |
+| Schéma du déroulement | `src/components/StudyFlow.astro` (utilisé dans `participer.mdx`, `controles.mdx` et l'accueil) |
+| Cartes avec icônes | composant `<Cards>` dans les fichiers `.mdx` (icônes : `src/components/Icon.astro`) |
 | Questions fréquentes | `src/content/faq.yaml` |
 | Équipe (rôle, présentation, motivation) | `src/content/team.yaml` |
 | Contact, n° d'éthique, menu, mode brouillon | `src/data/site.json` |

@@ -37,7 +37,7 @@
 
 - id: dedommagement
   question: Suis-je dédommagé·e ?
-  answer: "Oui : environ 200 CHF au total. Vous recevez 20 CHF par heure, plus ce que vous gagnez aux petits jeux pendant l'IRM."
+  answer: "Oui, pour les entretiens et les IRM : 20 CHF par heure, plus ce que vous gagnez aux petits jeux pendant l'IRM, soit environ 200 CHF au total. Les séances de thérapie PEPS ne sont pas rémunérées."
   audience: tous
 
 - id: ethique
