@@ -2,7 +2,7 @@
   // Site statique servi par Cloudflare Workers (static assets).
   // Build : `npm run build` → dossier ./dist
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "peps-site",
+  "name": "peps-website",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./dist",
