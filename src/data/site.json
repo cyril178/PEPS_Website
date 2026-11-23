@@ -3,15 +3,21 @@
   "name": "Étude PEPS Genève",
   "tagline": "Retrouver l'envie et le plaisir au quotidien",
   "description": "L'étude PEPS (Université de Genève, Département de psychiatrie) propose un programme de groupe pour retrouver du plaisir et de la motivation. Déroulement, questions fréquentes et contact.",
-  "institution": "Université de Genève — Département de psychiatrie, Campus Biotech",
-  "ethics": "Étude approuvée par la Commission cantonale d'éthique de la recherche (CCER) de Genève — n° [À COMPLÉTER : numéro BASEC]",
+  "institution": "Université de Genève — Département de psychiatrie, Service de psychiatrie adulte (Prof. Stefan Kaiser)",
+  "ethics": "Étude approuvée par la Commission cantonale d'éthique de la recherche (CCER) de Genève — n° 2024-01743",
   "contact": {
     "name": "Cyril Petignat",
     "role": "Psychologue et neuroscientifique, coordinateur de l'étude",
-    "email": "peps@[À COMPLÉTER : adresse]",
-    "phone": "+41 22 [À COMPLÉTER]",
+    "email": "Cyril.Petignat@unige.ch",
+    "phone": "022 379 09 59",
     "hours": "Du lundi au vendredi, 9 h – 17 h",
-    "address": "Campus Biotech, Chemin des Mines 9, 1202 Genève"
+    "address": "Campus Biotech, Chemin des Mines 9, 1202 Genève",
+    "access": "Bus 1, 11 ou 25, arrêt Jardin Botanique"
+  },
+  "contact2": {
+    "name": "Rachel Goldstein",
+    "email": "Rachel.Goldstein@unige.ch",
+    "phone": "022 379 09 58"
   },
   "nav": [
     { "label": "Participer", "href": "/participer/" },

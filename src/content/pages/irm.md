@@ -8,7 +8,7 @@ eyebrow: Imagerie par résonance magnétique
 
 L'IRM est un grand appareil qui prend des images du cerveau grâce à un **aimant** et à des **ondes radio**. Elle **n'utilise pas de rayons X** et ne fait pas mal. Dans cette étude, elle sert uniquement à la recherche.
 
-Dans l'étude PEPS, la séance dure **environ 2 h 30 sur place**, préparation comprise. Vous en faites deux : une au début, une à la fin.
+Dans l'étude PEPS, la séance dure **environ 2 heures**, préparation comprise. Pendant l'IRM, les petits jeux permettent de gagner un peu d'argent en plus du dédommagement. Vous en faites deux : une au début, une à la fin.
 
 ## Pendant la séance
 

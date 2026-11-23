@@ -10,7 +10,7 @@ facts:
   - label: Où
     value: Campus Biotech (évaluations et IRM) et CAPPI (séances de groupe), Genève
   - label: Dédommagement
-    value: 20 CHF par heure d'évaluation
+    value: "Environ 200 CHF : 20 CHF par heure, plus les gains aux jeux pendant l'IRM"
 cta:
   label: Je suis intéressé·e
   href: /contact/
@@ -21,6 +21,7 @@ cta:
 - vous avez **entre 18 et 60 ans** ;
 - vous vivez avec une **schizophrénie**, un **trouble schizo-affectif** ou un autre trouble psychotique ;
 - vous ressentez souvent un **manque d'envie, de plaisir ou d'énergie** ;
+- vous pouvez **garder votre suivi médical** actuel ;
 - votre situation est **stable** : pas d'hospitalisation ni de changement de traitement depuis au moins deux semaines ;
 - vous êtes d'accord de participer, après avoir reçu toutes les informations.
 
@@ -30,10 +31,12 @@ Certaines situations rendent l'étude moins adaptée pour le moment, par exemple
 
 ## Comment se passe l'étude ?
 
+Les horaires sont **flexibles** et s'organisent avec votre suivi habituel.
+
 1. **Premier appel.** Nous parlons par téléphone. Nous répondons à vos questions et regardons ensemble si l'étude vous convient.
 2. **Information et consentement.** Nous vous envoyons le document d'information à l'avance, pour le lire tranquillement, seul·e ou avec un proche. Vous signez seulement si vous le souhaitez.
 3. **Premier entretien** (environ 3 heures, avec des pauses, au Campus Biotech). Des questions sur votre quotidien, votre humeur et votre motivation.
-4. **Première IRM** (environ 2 h 30 sur place). De petits jeux sur ordinateur pendant que l'appareil prend des images du cerveau.
+4. **Première IRM** (environ 2 heures). De petits jeux sur ordinateur pendant que l'appareil prend des images du cerveau. Vous pouvez y gagner un peu d'argent en plus.
 5. **Tirage au sort.** Un ordinateur décide au hasard de votre groupe :
    - **groupe PEPS** : 8 séances de groupe d'une heure, une par semaine, au CAPPI, en plus de votre suivi habituel ;
    - **groupe suivi habituel** : vous continuez vos soins comme d'habitude.

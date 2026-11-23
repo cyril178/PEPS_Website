@@ -9,15 +9,17 @@ facts:
     value: 8 séances de groupe d'une heure, une par semaine
   - label: Où
     value: Genève — CAPPI et Campus Biotech
+  - label: Dédommagement
+    value: "Environ 200 CHF (20 CHF par heure, plus les gains aux jeux)"
   - label: Participation
     value: Volontaire, vous pouvez arrêter à tout moment
 journey:
   - title: Premier appel
     text: Un court échange par téléphone. Vous posez vos questions, sans engagement.
   - title: Entretien
-    text: "Environ 3 heures au Campus Biotech, avec des pauses : questions sur votre quotidien et votre humeur."
+    text: "Environ 3 heures au Campus Biotech, avec des pauses, à un horaire qui vous convient : questions sur votre quotidien et votre humeur."
   - title: Première IRM
-    text: "Environ 2 h 30 sur place. Une photo très précise du cerveau, pendant de petits jeux sur ordinateur."
+    text: "Environ 2 heures. Une photo très précise du cerveau, pendant de petits jeux sur ordinateur."
   - title: 8 séances de groupe
     text: Une heure par semaine pendant 8 semaines, ou votre suivi habituel, selon le tirage au sort.
   - title: Deuxième IRM

@@ -52,17 +52,22 @@
 
 - id: dedommagement
   question: Suis-je dédommagé·e ?
-  answer: "Oui : 20 CHF par heure d'évaluation. [À COMPLÉTER : modalités de paiement et remboursement des frais de transport]."
+  answer: "Oui : environ 200 CHF au total. Vous recevez 20 CHF par heure, plus ce que vous gagnez aux petits jeux pendant l'IRM. [À COMPLÉTER : modalités de paiement et remboursement des frais de transport]."
   audience: tous
 
 - id: ethique
   question: Qui contrôle cette étude ?
-  answer: "L'étude a été évaluée et approuvée par la Commission cantonale d'éthique de la recherche de Genève. Elle respecte la loi suisse sur la recherche avec des êtres humains. Avant de commencer, vous recevez un document d'information écrit, et vous signez seulement si vous êtes d'accord."
+  answer: "L'étude a été évaluée et approuvée par la Commission cantonale d'éthique de la recherche de Genève. Son numéro est le 2024-01743. Elle respecte la loi suisse sur la recherche avec des êtres humains. Avant de commencer, vous recevez un document d'information écrit, et vous signez seulement si vous êtes d'accord."
   audience: tous
 
 - id: donnees
   question: Que deviennent mes données ?
   answer: "Elles sont codées : votre nom est remplacé par un numéro. Seule l'équipe de l'étude peut faire le lien. Les résultats sont publiés sans qu'on puisse vous reconnaître."
+  audience: tous
+
+- id: acces
+  question: Comment venir au Campus Biotech ?
+  answer: "Le Campus Biotech se trouve au Chemin des Mines 9, à Genève. En bus : lignes 1, 11 ou 25, arrêt Jardin Botanique."
   audience: tous
 
 - id: controle-qui
