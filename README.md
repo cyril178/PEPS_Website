@@ -63,7 +63,7 @@ git push -u origin main
    - **Deploy command** : `npx wrangler deploy`
    - **Non-production branch deploy command** : `npx wrangler versions upload` (c'est ce qui crée les URL d'aperçu)
    - Activer **Builds for non-production branches**.
-3. Déployer. Le site est sur `https://peps-site.<compte>.workers.dev`.
+3. Déployer. Le site est sur https://peps-website.cyril17891.workers.dev.
 4. Plus tard : un vrai domaine dans **Settings → Domains & Routes**, puis mettre à jour `site` dans `astro.config.mjs`.
 
 ## Travailler au quotidien
