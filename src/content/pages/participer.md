@@ -1,16 +1,16 @@
 ---
 title: Participer à l'étude
-description: Ce que l'étude PEPS vous propose, comment elle se déroule et qui peut participer.
-eyebrow: Pour les personnes vivant avec une schizophrénie
+description: Qui peut participer, ce que vous ferez, quand et où.
+eyebrow: Pour les personnes concernées par la schizophrénie
 facts:
-  - label: Durée totale
+  - label: Durée
     value: Environ 4 mois
   - label: Rendez-vous
-    value: "4 rendez-vous d'évaluation, dont 2 IRM, et 8 séances de groupe si vous êtes dans le groupe PEPS"
-  - label: Où
-    value: Campus Biotech (évaluations et IRM) et CAPPI (séances de groupe), Genève
-  - label: Dédommagement
-    value: "Environ 200 CHF : 20 CHF par heure, plus les gains aux jeux pendant l'IRM"
+    value: 2 × (entretien 3 h + IRM 2 h), et 8 semaines de thérapie PEPS
+  - label: Horaires
+    value: Flexibles, adaptés à votre suivi
+  - label: Indemnisation
+    value: "Environ 200 CHF (20 CHF/heure + gains aux jeux)"
 cta:
   label: Je suis intéressé·e
   href: /contact/
@@ -18,48 +18,27 @@ cta:
 
 ## Vous pouvez participer si…
 
-- vous avez **entre 18 et 60 ans** ;
-- vous vivez avec une **schizophrénie**, un **trouble schizo-affectif** ou un autre trouble psychotique ;
-- vous ressentez souvent un **manque d'envie, de plaisir ou d'énergie** ;
-- vous pouvez **garder votre suivi médical** actuel ;
-- votre situation est **stable** : pas d'hospitalisation ni de changement de traitement depuis au moins deux semaines ;
-- vous êtes d'accord de participer, après avoir reçu toutes les informations.
+- vous avez entre **18 et 60 ans** ;
+- vous vivez avec une **schizophrénie** ou un trouble psychotique ;
+- vous ressentez des **difficultés de motivation ou de plaisir** ;
+- votre situation est **stable** en ce moment.
 
-Vous n'avez **pas besoin de changer vos médicaments** : aucun traitement n'est interdit dans l'étude.
+Vous **gardez votre suivi médical** et votre traitement.
 
-Certaines situations rendent l'étude moins adaptée pour le moment, par exemple une dépression en cours ou une IRM impossible (voir [L'IRM](/irm/)). Nous vérifions tout cela avec vous lors du premier appel, sans engagement.
+## Ce que vous ferez
 
-## Comment se passe l'étude ?
+1. **Entretien** (environ 3 h) sur votre quotidien.
+2. **IRM** (environ 2 h) : des jeux et tâches simples, avec des gains possibles.
+3. **8 semaines** : une séance de groupe PEPS par semaine, ou votre suivi habituel. Le groupe est tiré au sort.
+4. **Entretien et IRM**, une deuxième fois.
 
-Les horaires sont **flexibles** et s'organisent avec votre suivi habituel.
+## C'est où ?
 
-1. **Premier appel.** Nous parlons par téléphone. Nous répondons à vos questions et regardons ensemble si l'étude vous convient.
-2. **Information et consentement.** Nous vous envoyons le document d'information à l'avance, pour le lire tranquillement, seul·e ou avec un proche. Vous signez seulement si vous le souhaitez.
-3. **Premier entretien** (environ 3 heures, avec des pauses, au Campus Biotech). Des questions sur votre quotidien, votre humeur et votre motivation.
-4. **Première IRM** (environ 2 heures). De petits jeux sur ordinateur pendant que l'appareil prend des images du cerveau. Vous pouvez y gagner un peu d'argent en plus.
-5. **Tirage au sort.** Un ordinateur décide au hasard de votre groupe :
-   - **groupe PEPS** : 8 séances de groupe d'une heure, une par semaine, au CAPPI, en plus de votre suivi habituel ;
-   - **groupe suivi habituel** : vous continuez vos soins comme d'habitude.
-6. **Fin de l'étude.** Un nouvel entretien et une deuxième IRM, comme au début, pour voir ce qui a changé.
+Entretiens et IRM au **Campus Biotech**, Chemin des Mines 9, 1202 Genève — bus 1, 11 ou 25, arrêt **Jardin Botanique**. Détails sur la page [Contact](/contact/#acces).
 
-### Pourquoi un tirage au sort ?
+## Important
 
-C'est comme une balance : pour savoir si PEPS fait vraiment une différence, il faut comparer deux groupes qui se ressemblent. La personne qui fait les évaluations **ne sait pas dans quel groupe vous êtes**. Ainsi, les résultats sont plus fiables.
-
-## Le programme PEPS en quelques mots
-
-PEPS se déroule **en petit groupe** (environ 3 à 5 personnes), avec des animateurs·trices formé·es. Pendant les séances, on apprend par exemple à :
-
-- **savourer** un bon moment pendant qu'il se passe ;
-- **anticiper** un moment agréable, pour avoir envie de le vivre ;
-- **exprimer** ses émotions par les mots et par le corps ;
-- **garder** les bons moments en mémoire et les partager.
-
-Entre les séances, de petits exercices sont proposés pour la vie de tous les jours. Pour en savoir plus : [Pourquoi cette étude ?](/pourquoi/)
-
-## Vos droits
-
-- Participer est **volontaire**.
-- Vous pouvez **arrêter à tout moment**, sans donner de raison.
-- Refuser ou arrêter **ne change rien à vos soins** habituels.
-- Vos données sont **confidentielles** (voir [Protection des données](/confidentialite/)).
+- Participation **volontaire**.
+- Vous pouvez **arrêter à tout moment**, sans donner de raison. Cela ne change rien à vos soins.
+- Étude **approuvée par la commission d'éthique** (CCER 2024-01743).
+- Encadrement par des **professionnel·les de santé**.

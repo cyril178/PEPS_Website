@@ -9,7 +9,7 @@ const faq = await getCollection('faq');
 const groups = [
   { key: 'tous', title: 'Pour tout le monde' },
   { key: 'patients', title: 'Participer au programme PEPS' },
-  { key: 'controles', title: 'Volontaires sain·es' },
+  { key: 'controles', title: 'Volontaires en bonne santé' },
 ].map((g) => ({ ...g, items: faq.filter((f) => f.data.audience === g.key) }))
  .filter((g) => g.items.length);
 ---

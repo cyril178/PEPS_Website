@@ -39,6 +39,16 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
     </aside>
   </div>
 
+  <section class="wrap acces" id="acces" aria-labelledby="acces-titre">
+    <h2 id="acces-titre">Venir au Campus Biotech</h2>
+    <dl>
+      <div><dt>Adresse</dt><dd>{c.address}</dd></div>
+      <div><dt>En bus</dt><dd>Lignes 1, 11 ou 25, arrêt Jardin Botanique</dd></div>
+      <div><dt>À pied</dt><dd>Environ 20 minutes depuis la gare Cornavin</dd></div>
+    </dl>
+    <p><a href="https://www.openstreetmap.org/search?query=Campus%20Biotech%2C%20Chemin%20des%20Mines%209%2C%20Gen%C3%A8ve" rel="noopener">Voir sur une carte →</a></p>
+  </section>
+
   <section class="wrap form-block" aria-labelledby="ecrire">
     <h2 id="ecrire">Laisser un message</h2>
     <p class="hint">Trois champs, c'est tout. Indiquez simplement comment vous préférez être recontacté·e : téléphone ou e-mail, comme vous voulez.</p>
@@ -59,8 +69,8 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
 
   <section class="wrap">
     <a class="volunteer" href="/controles/">
-      <strong>Vous n'avez pas de trouble psychiatrique ?</strong>
-      <span>Devenez volontaire sain·e pour l'étude →</span>
+      <strong>Vous êtes en bonne santé ?</strong>
+      <span>Participez comme volontaire →</span>
     </a>
   </section>
 </Base>
@@ -90,6 +100,11 @@ const telOf = (n: string) => n.replace(/[^\d+]/g, '').replace(/^0/, '+41');
   dt { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--sun-soft); margin-top: 1rem; }
   dd { margin: 0.15rem 0 0; font-size: 1.08rem; }
   .form-block { max-width: var(--measure); }
+  .acces { max-width: var(--measure); margin-top: 1rem; }
+  .acces dl { display: grid; gap: 0.75rem; margin: 1rem 0; }
+  .acces dl div { background: var(--surface); border-radius: var(--radius); padding: 0.9rem 1.1rem; }
+  .acces dt { color: var(--teal); margin-top: 0; }
+  .acces dd { margin: 0.1rem 0 0; }
   .hint { color: var(--ink-soft); }
   form { display: grid; gap: 0.4rem; margin-top: 1.5rem; }
   label { font-weight: 700; color: var(--teal-deep); margin-top: 0.9rem; }

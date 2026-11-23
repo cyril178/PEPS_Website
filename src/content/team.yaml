@@ -1,14 +1,10 @@
-# Équipe de l'étude. bio et motivation sont facultatifs.
 - id: petignat
   name: Cyril Petignat
-  role: Psychologue et neuroscientifique, doctorant — coordination de l'étude
-  bio: "Cyril Petignat est psychologue et neuroscientifique. Il prépare un doctorat au Département de psychiatrie de l'Université de Genève, au Campus Biotech. Sa recherche étudie comment PEPS, un programme de groupe qui entraîne à savourer les moments positifs, change l'activité du cerveau liée à la motivation et au plaisir chez les personnes vivant avec une schizophrénie."
-  motivation: "Ce sera probablement moi qui vous répondrai au téléphone. Mon souhait : expliquer ma recherche avec des mots simples, et que vous puissiez décider en toute tranquillité."
-- id: kaiser
-  name: Prof. Stefan Kaiser
-  role: Investigateur principal — Département de psychiatrie, UNIGE
-  motivation: "[À COMPLÉTER : sa motivation, en une ou deux phrases]"
+  role: Psychologue et neuroscientifique, doctorant — coordinateur de l'étude
+  bio: "Cyril Petignat prépare un doctorat au Département de psychiatrie de l'Université de Genève, au Campus Biotech. Sa recherche étudie comment PEPS, un programme de groupe qui entraîne à savourer les moments positifs, change l'activité du cerveau liée à la motivation et au plaisir chez les personnes vivant avec une schizophrénie."
 - id: goldstein
   name: Rachel Goldstein
-  role: "[À COMPLÉTER : rôle]"
-  motivation: "[À COMPLÉTER : sa motivation, en une ou deux phrases]"
+  role: Coordinatrice de l'étude
+- id: kaiser
+  name: Prof. Stefan Kaiser
+  role: Investigateur principal — Service de psychiatrie adulte, HUG et UNIGE

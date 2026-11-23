@@ -15,11 +15,6 @@
   answer: "Non. Vous continuez votre traitement et votre suivi habituels, et aucun médicament n'est interdit. PEPS s'ajoute à vos soins, il ne les remplace pas. Nous vous demandons seulement de nous signaler les changements pendant l'étude."
   audience: patients
 
-- id: obligation
-  question: Est-ce que je dois participer si mon médecin m'en parle ?
-  answer: "Non. La participation est toujours volontaire. Vous pouvez refuser, sans donner de raison. Cela ne change rien à vos soins."
-  audience: patients
-
 - id: arreter
   question: Puis-je arrêter en cours de route ?
   answer: "Oui, à tout moment et sans donner de raison. Il suffit de nous le dire. Arrêter ne change rien à vos soins."
@@ -32,27 +27,17 @@
 
 - id: tirage
   question: Puis-je choisir mon groupe ?
-  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. Dans les deux groupes, vous gardez votre suivi habituel. [À COMPLÉTER : préciser si le groupe suivi habituel pourra suivre PEPS à la fin de l'étude]."
+  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. Dans les deux groupes, vous gardez votre suivi habituel."
   audience: patients
 
 - id: irm-peur
   question: L'IRM me fait peur. Comment ça se passe ?
-  answer: "C'est une peur fréquente. L'IRM ne fait pas mal et n'utilise pas de rayons X. Vous pouvez parler avec l'équipe à tout moment, et vous tenez une poire d'alarme : si vous appuyez, nous arrêtons tout de suite. Une crise d'angoisse dans l'appareil est très rare."
-  audience: tous
-
-- id: irm-danger
-  question: L'IRM est-elle dangereuse ?
-  answer: "Non, pour la plupart des personnes. Le seul risque vient du métal dans ou sur le corps. C'est pourquoi nous posons des questions de sécurité avant chaque séance."
-  audience: tous
-
-- id: resultats-irm
-  question: Est-ce que je recevrai les images de mon cerveau ?
-  answer: "[À COMPLÉTER : politique de l'étude sur la communication des images et des découvertes fortuites]."
+  answer: "C'est une peur fréquente. L'IRM ne fait pas mal et n'utilise pas de rayons X. Nous vérifions avant la séance qu'il n'y a pas de métal dans votre corps. Vous pouvez parler avec l'équipe à tout moment, et vous tenez une poire d'alarme : si vous appuyez, nous arrêtons tout de suite. Une crise d'angoisse dans l'appareil est très rare."
   audience: tous
 
 - id: dedommagement
   question: Suis-je dédommagé·e ?
-  answer: "Oui : environ 200 CHF au total. Vous recevez 20 CHF par heure, plus ce que vous gagnez aux petits jeux pendant l'IRM. [À COMPLÉTER : modalités de paiement et remboursement des frais de transport]."
+  answer: "Oui : environ 200 CHF au total. Vous recevez 20 CHF par heure, plus ce que vous gagnez aux petits jeux pendant l'IRM."
   audience: tous
 
 - id: ethique
@@ -67,10 +52,10 @@
 
 - id: acces
   question: Comment venir au Campus Biotech ?
-  answer: "Le Campus Biotech se trouve au Chemin des Mines 9, à Genève. En bus : lignes 1, 11 ou 25, arrêt Jardin Botanique."
+  answer: "Au Campus Biotech, Chemin des Mines 9, à Genève. Bus 1, 11 ou 25, arrêt Jardin Botanique. Tous les détails sont sur la page Contact."
   audience: tous
 
 - id: controle-qui
-  question: Qui peut être volontaire sain·e ?
+  question: Qui peut participer comme volontaire en bonne santé ?
   answer: "Des adultes de 18 à 60 ans, sans trouble psychiatrique ou neurologique connu, qui peuvent passer une IRM."
   audience: controles
