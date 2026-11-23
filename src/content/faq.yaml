@@ -52,7 +52,7 @@
 
 - id: acces
   question: Comment venir au Campus Biotech ?
-  answer: "Au Campus Biotech, Chemin des Mines 9, à Genève. Bus 1, 11 ou 25, arrêt Jardin Botanique. Tous les détails sont sur la page Contact."
+  answer: "Au Campus Biotech, Chemin des Mines 9, à Genève. Bus 1, 11 ou 25, arrêt Jardin Botanique. Ou tram 15, arrêt Nations, ou train jusqu'à la gare de Genève-Sécheron. Tous les détails et le plan sont sur la page Contact."
   audience: tous
 
 - id: controle-qui
