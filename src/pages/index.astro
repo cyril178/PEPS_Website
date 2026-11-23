@@ -25,7 +25,7 @@ const { Content } = await render(page);
         </div>
       </div>
       <figure class="hero-art">
-        <img src="/images/peps-groupe.jpg" width="298" height="169" alt="Illustration : quatre personnes discutent et sourient ensemble." />
+        <img src="/images/peps-illustration.jpg" width="1400" height="839" alt="Illustration : un groupe réuni autour de deux animateurs. L'un balaie un nuage gris de pensées sombres, l'autre montre une bulle pleine de fleurs et de papillons." />
       </figure>
     </div>
   </section>
@@ -99,7 +99,7 @@ const { Content } = await render(page);
     @keyframes underline { from { transform: scaleX(0); } }
   }
 
-  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 5vw, 4rem); }
+  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(2rem, 5vw, 4rem); }
   .hero h1 { max-width: 15ch; font-size: clamp(2.2rem, 3.6vw + 1rem, 3.6rem); letter-spacing: -0.02em; }
   .hl { position: relative; z-index: 0; white-space: nowrap; }
   .hl::after {
@@ -110,12 +110,12 @@ const { Content } = await render(page);
   .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
   .hero-art { margin: 0; justify-self: center; }
   .hero-art img {
-    display: block; width: 100%; max-width: 440px; height: auto; border-radius: 20px; background: #fff;
+    display: block; width: 100%; max-width: 560px; height: auto; border-radius: 20px; background: #fff;
     padding: 0.75rem; box-shadow: 0 30px 70px -35px rgb(28 61 69 / 0.55), 0 0 0 1px var(--line);
   }
   @media (max-width: 760px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-art img { max-width: 340px; }
+    .hero-art img { max-width: 100%; }
   }
 
   .facts-block { position: relative; margin-top: -3rem; }
