@@ -2,6 +2,9 @@
 title: L'IRM, comment ça se passe ?
 description: Ce qu'il faut savoir avant une séance d'IRM dans l'étude PEPS — sécurité, déroulement, préparation, en vidéo.
 eyebrow: Imagerie par résonance magnétique
+video:
+  youtube: "uUvHTG2cIP8"
+  caption: "Les craintes autour de l'IRM, expliquées avec un patient partenaire."
 ---
 
 ## Qu'est-ce qu'une IRM ?

@@ -36,7 +36,7 @@ const { Content } = await render(page);
     <div class="prose reveal"><Content /></div>
     <Cards items={[
       { icon: 'group', title: 'Le programme PEPS', text: '8 séances de groupe pour apprendre à savourer et anticiper les bons moments.', href: '/programme/', more: 'Découvrir le programme' },
-      { icon: 'brain', title: 'Pourquoi cette étude ?', text: "Comprendre ce qui se passe dans le cerveau grâce à l'IRM, en vidéo.", href: '/pourquoi/', more: "Voir l'explication" },
+      { icon: 'brain', title: 'Pourquoi cette étude ?', text: "Le manque de motivation, et ce que l'IRM peut nous apprendre.", href: '/pourquoi/', more: "Voir l'explication" },
       { icon: 'scan', title: "L'IRM", text: 'Comment se passe une séance, la sécurité, ce qu’il faut savoir avant de venir.', href: '/irm/', more: "Tout sur l'IRM" },
     ]} />
   </section>
@@ -54,12 +54,12 @@ const { Content } = await render(page);
   </section>
 
   <section class="wrap video-band reveal">
-    <a class="video-card" href="/pourquoi/">
+    <a class="video-card" href="/programme/#video">
       <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M8 5v14l11-7z" fill="currentColor" /></svg></span>
       <span class="vc-text">
         <span class="eyebrow">En vidéo</span>
-        <strong>L'étude PEPS expliquée avec un patient partenaire</strong>
-        <span>Quelques minutes pour comprendre le programme et la recherche.</span>
+        <strong>Le programme PEPS en vidéo</strong>
+        <span>3 minutes pour découvrir les émotions positives et ce que l'on apprend en groupe.</span>
       </span>
     </a>
   </section>
