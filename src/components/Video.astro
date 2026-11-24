@@ -7,11 +7,9 @@ import site from '../data/site.json';
 interface Props { youtube?: string; src?: string; poster?: string; caption: string }
 const { youtube, src, poster = '/images/peps-illustration.jpg', caption } = Astro.props;
 ---
-<figure class="video">
+<figure class="video" id="video">
   {src ? (
-    <video controls preload="metadata" poster={poster} src={src}>
-      <track kind="captions" srclang="fr" label="Français" src={src.replace(/\.\w+$/, '.vtt')} default />
-    </video>
+    <video controls preload="none" playsinline poster={poster} src={src}></video>
   ) : youtube ? (
     <a class="facade" href={`https://www.youtube.com/watch?v=${youtube}`} target="_blank" rel="noopener noreferrer"
       style={`background-image:url(${poster})`} aria-label={`Regarder la vidéo sur YouTube : ${caption}`}>

@@ -17,5 +17,5 @@ L'étude respecte la **loi fédérale relative à la recherche sur l'être humai
 - Ce site **ne dépose aucun cookie** et n'enregistre rien dans votre navigateur.
 - Il **ne mesure pas votre visite** : pas de statistiques, pas de publicité, pas de suivi.
 - Tout est hébergé sur le site lui-même (textes, images, polices de caractères). Aucun service tiers (Google, YouTube, réseaux sociaux) n'est contacté pendant votre visite.
-- La vidéo et le plan sont de **simples liens** : ils ne s'ouvrent sur YouTube ou Google Maps que si vous cliquez, dans un nouvel onglet.
+- La vidéo du programme est hébergée sur le site lui-même. La vidéo sur l'IRM et le plan sont de **simples liens** : ils ne s'ouvrent sur YouTube ou Google Maps que si vous cliquez, dans un nouvel onglet.
 - Si vous nous écrivez, votre message est utilisé uniquement pour vous répondre.
