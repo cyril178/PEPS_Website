@@ -60,7 +60,7 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
           <div class="lane tau">
             <div class="lane-head"><Icon name="home" size={20} /><strong>Suivi habituel</strong></div>
             <div class="bar"><span></span></div>
-            <p>Les soins continuent comme d'habitude</p>
+            <p>Les soins continuent comme d'habitude. <strong class="after">PEPS est proposé à la fin de l'étude.</strong></p>
           </div>
         </div>
 
@@ -149,6 +149,7 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
   .lane-head { display: flex; align-items: center; gap: 0.45rem; color: var(--teal); }
   .lane-head strong { color: var(--teal-deep); }
   .lane p { margin: 0.55rem 0 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.4; }
+  .after { display: block; margin-top: 0.3rem; color: var(--teal-deep); }
   .lane.peps { border-color: var(--teal); background: linear-gradient(180deg, var(--sun-soft), var(--paper)); }
 
   .sessions { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.35rem; }

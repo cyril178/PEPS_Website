@@ -27,7 +27,7 @@
 
 - id: tirage
   question: Puis-je choisir mon groupe ?
-  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. Dans les deux groupes, vous gardez votre suivi habituel."
+  answer: "Non, le groupe est tiré au sort par un ordinateur. C'est ce qui permet de savoir si le programme est vraiment utile. Dans les deux groupes, vous gardez votre suivi habituel. Si vous êtes dans le groupe « suivi habituel », vous pourrez suivre le programme PEPS après l'étude."
   audience: patients
 
 - id: irm-peur

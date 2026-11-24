@@ -7,12 +7,19 @@ video:
   caption: "L'étude PEPS expliquée en vidéo, avec un patient partenaire."
 ---
 
+import Cards from '../../components/Cards.astro';
+
+
 ## Le problème : l'envie qui s'éteint
 
 Les symptômes dits « négatifs », comme la **perte de motivation ou de plaisir**, pèsent lourd au quotidien : activités, travail, relations. Aujourd'hui, peu de traitements les améliorent vraiment. Le programme [PEPS](/programme/) est une piste prometteuse.
 
 ## Pourquoi l'IRM ?
 
-L'IRM est comme un **appareil photo très précis** du cerveau. Elle montre quelles régions travaillent pendant un petit jeu. En comparant les images **avant et après** PEPS, nous voulons voir si le programme réveille le « moteur de la motivation » du cerveau, une région profonde appelée **striatum**.
+L'IRM est comme un **appareil photo très précis** du cerveau. Nous prenons une « photo » au début et une à la fin, puis nous les comparons pour mieux comprendre comment PEPS agit.
 
-![Coupes du cerveau vues par IRM : le striatum apparaît en couleur, au centre.](/images/irm-striatum.jpg)
+<Cards items={[
+  { icon: "scan", title: "Au début", text: "Une première IRM, avec de petits jeux sur ordinateur." },
+  { icon: "calendar", title: "8 semaines", text: "Le programme PEPS ou le suivi habituel." },
+  { icon: "flag", title: "À la fin", text: "Une deuxième IRM, pour voir ce qui a changé." },
+]} />
