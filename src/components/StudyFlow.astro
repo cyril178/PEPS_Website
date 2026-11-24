@@ -26,11 +26,11 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
       )}
       <div class="step">
         <span class="ico"><Icon name="chat" /></span>
-        <div><strong>Entretien</strong><span><Icon name="clock" size={14} /> environ 3 h</span></div>
+        <div><strong>Entretien</strong><span><Icon name="clock" size={14} /> environ 3 h</span><span><Icon name="pin" size={14} /> Campus Biotech</span></div>
       </div>
       <div class="step">
         <span class="ico"><Icon name="scan" /></span>
-        <div><strong>IRM</strong><span><Icon name="clock" size={14} /> environ 2 h</span></div>
+        <div><strong>IRM</strong><span><Icon name="clock" size={14} /> environ 2 h</span><span><Icon name="pin" size={14} /> Campus Biotech</span></div>
       </div>
     </div>
 
@@ -55,7 +55,7 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
             <ol class="sessions" aria-label="8 séances de groupe">
               {sessions.map((n) => <li style={`--i:${n}`}><span>{n}</span></li>)}
             </ol>
-            <p>8 séances de groupe d'1 h, une par semaine, en plus du suivi habituel</p>
+            <p>8 séances de groupe d'1 h, une par semaine, dans un CAPPI des HUG, en plus du suivi habituel</p>
           </div>
           <div class="lane tau">
             <div class="lane-head"><Icon name="home" size={20} /><strong>Suivi habituel</strong></div>
@@ -85,7 +85,7 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
     <div class="col end">
       <div class="step final">
         <span class="ico"><Icon name="flag" /></span>
-        <div><strong>Entretien + IRM</strong><span>Les mêmes mesures qu'au début, pour voir ce qui a changé</span></div>
+        <div><strong>Entretien + IRM</strong><span>Au Campus Biotech, les mêmes mesures qu'au début, pour voir ce qui a changé</span></div>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@ const sessions = Array.from({ length: 8 }, (_, i) => i + 1);
     background: var(--surface); border-radius: var(--radius);
   }
   .step strong { display: block; color: var(--teal-deep); line-height: 1.25; }
-  .step span { font-size: 0.88rem; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 0.3rem; line-height: 1.35; }
+  .step span { font-size: 0.88rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.3rem; line-height: 1.35; }
   .ico {
     flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
     background: var(--paper); color: var(--teal); box-shadow: inset 0 0 0 1px var(--line);

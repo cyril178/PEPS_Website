@@ -11,7 +11,7 @@ facts:
     value: 8 semaines de thérapie de groupe PEPS
   - label: Où
     icon: pin
-    value: Campus Biotech, Genève — bus 1, 11 ou 25
+    value: Entretiens et IRM au Campus Biotech ; séances PEPS dans les CAPPI des HUG
   - label: Indemnisation
     icon: coin
     value: "Environ 200 CHF pour les entretiens et les IRM (pas pour la thérapie)"
